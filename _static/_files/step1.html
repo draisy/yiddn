@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Yiddn - Upload Listing</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/inner.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/form.css" type="text/css" media="all" />
+ <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/dropdown.css" />
+  </head>
+<body>
+
+<!--Header -->  
+ <header id="header" style="top:0">   
+ <div class="shell">
+ 
+  <div id="nav-top">
+  <div id="loginContainer">  
+                <a href="#" id="loginButton"><span>LOG IN</span></a>
+                 <div id="loginBox">                
+                    <form id="loginForm">
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Email Address</label>
+                                <input type="text" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Sign in" />
+                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                        </fieldset>
+                        <span><a href="#">Forgot your password?</a></span>
+                    </form>
+                </div>
+            </div>
+   <div class="dot">.</div> 
+  <a href="#">JOIN</a>
+  
+  <div class="shellsearch">
+  <form class="searchform" method="get"   action="#">
+<input class="searchfield" type="text" placeholder='What are you looking for?' name="keywords" /> IN
+<input class="searchfield2" type="text" placeholder='Flatbush' name="Location" id="Location" />
+<input class="searcbutton" type="submit" value="&nbsp;" name="Go" id="Go"/>
+</form>
+    </div> 
+   </div>
+ 
+ <div id="logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+   </div>
+  </header> 
+<!--/Header -->
+
+<!-- Main -->
+<section id="content-main">
+<div class="master">
+<div class="cl">&nbsp;</div>
+<div class="cl">&nbsp;</div>
+      <div class="inner-col-left-dashboard">
+		<div id="contact-area">
+     <h1>Post Your Listing</h1><br />
+      <form method="post" enctype="multipart/form-data" id="frm1" name="frm1">
+     
+      <fieldset>
+        <legend>
+        <h2>Step 1: Company Information</h2>
+        </legend>
+        <label for="CompanyName">Company Name:</label>
+        <input name="CompanyName" id="CompanyName" type="text"   pattern=".{5,}" required title="5 characters minimum" />
+            <span id="Info"></span>
+        <label for="Address">Company Address:</label>
+        <textarea name="CompanyAddress" id="CompanyAddress"  style="height:40px;"></textarea>
+        
+        <label for="CompanyEmail">Company Email:</label>
+        <input name="CompanyEmail" id="CompanyEmail" type="text" />
+        
+        <label for="CompanyWebsite">Company Website:</label>
+        <input name="CompanyWebsite" id="CompanyWebsite" type="text" placeholder="http://" />
+        
+        <label for="CompanyLogo">Upload Logo (optional):</label>
+        <input type="file" name="CompanyLogo" id="CompanyLogo" />
+        <br />
+        <small class="note"><em> Logo size should be exactly 182 X 76*</em><div>&nbsp;</div></small>
+        <br />
+        <br />
+
+</fieldset>
+   </div>   
+		 <a href="step2.html" class="dashboard previous" style="float:right">NEXT -></a>
+    </div>
+   <div class="clr">&nbsp;</div>
+  </div>
+</section>
+  
+  <!-- End Main --> 
+  
+
+<div class="cl">&nbsp;</div>
+
+ <footer>
+ <div class="shellfooter">
+  <div class="shell">
+    <div class="links">
+          <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Listings</a>
+        <a href="#">Advertise</a>
+        <a href="#">Faq</a>
+        <a href="#">Legal & Privacy</a>
+        <a href="#">Contact</a>
+  </div>
+  
+  <p class="copyright">
+ Yiddn.com is a registered trademark. No portion of this site or its content may be duplicated or distributed. <br>
+ © Copyright 2014 Yiddn Inc. All rights reserved </p>
+  
+   </div>
+    </div> 
+    
+   
+     </footer>
+	</body>
+</html>

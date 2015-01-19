@@ -1,0 +1,142 @@
+RewriteEngine on
+
+# Force SSL on checkout login account and admin pages
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} admin-login$|index.php$
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)$ [NC]
+RewriteRule ^(.*)$ https://%2/$1 [R=301,L,QSA]
+
+# Remove SSL on other pages
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} !dashboard$|manage-site-users$
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)$ [NC]
+RewriteRule ^(.*)$ http://www.%2/$1 [R=301,L,QSA]
+
+# Force www for non https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L,QSA]
+
+RewriteRule ^admin-login   								index.php
+RewriteRule ^login	    								login.php
+RewriteRule ^logout	   									logout.php
+RewriteRule ^dashboard   								dashboard.php
+RewriteRule ^account-setting							account-setting.php
+
+RewriteRule ^manage-admin-users							manage-admin-users.php
+RewriteRule ^add-new-admin-user							add-new-admin-user.php
+RewriteRule ^edit-admin-user							edit-admin-user.php
+
+RewriteRule ^manage-site-users							manage-site-users.php
+RewriteRule ^add-new-site-user							add-new-site-user.php
+RewriteRule ^edit-site-user								edit-site-user.php
+
+# Advertisement
+
+RewriteRule ^manage-adcircular-categories			manage-advertisement-categories.php
+RewriteRule ^add-new-adcircular-category			add-new-advertisement-category.php
+RewriteRule ^edit-adcircular-category				edit-advertisement-category.php
+RewriteRule ^adcircular								advertisement.php
+RewriteRule ^edit-adcircular$						edit-adcircular.php
+
+
+
+RewriteRule ^manage-adcircular-sub-categories		manage-advertisement-sub-categories.php
+RewriteRule ^add-new-adcircular-sub-category		add-new-advertisement-sub-category.php
+RewriteRule ^edit-adcircular-sub-category			edit-advertisement-sub-category.php
+
+# Business Directory
+
+RewriteRule ^manage-jewish-e-tailers-categories manage-business-directory-categories.php
+	
+RewriteRule ^add-new-jewish-e-tailers-category		add-new-business-directory-category.php
+
+RewriteRule ^edit-jewish-e-tailers-category			edit-business-directory-category.php
+
+
+
+RewriteRule ^orders									orders.php
+
+RewriteRule ^jewish-e-tailers						business-directory.php
+
+RewriteRule ^manage-jewish-e-tailers-sub-categories	manage-business-directory-sub-categories.php
+
+RewriteRule ^add-new-jewish-e-tailers-sub-category	add-new-business-directory-sub-category.php
+
+RewriteRule ^edit-jewish-e-tailers-sub-category		edit-business-directory-sub-category.php
+
+RewriteRule ^edit-jewish-e-tailers				    edit-jewish-e-tailers.php
+
+# Local Directory
+
+RewriteRule ^manage-local-directory-categories			manage-local-directory-categories.php
+RewriteRule ^add-new-local-directory-category			add-new-local-directory-category.php
+RewriteRule ^edit-local-directory-category				edit-local-directory-category.php
+RewriteRule ^local-directory						   local-directory.php
+RewriteRule ^edit-local-directory$					   edit-local-directory.php
+
+
+
+
+RewriteRule ^manage-local-directory-sub-categories		manage-local-directory-sub-categories.php
+RewriteRule ^add-new-local-directory-sub-category		add-new-local-directory-sub-category.php
+RewriteRule ^edit-local-directory-sub-category			edit-local-directory-sub-category.php
+# Regions
+
+RewriteRule ^country		 						country.php
+RewriteRule ^add-new-country						add-new-country.php
+RewriteRule ^edit-country							edit-country.php
+
+RewriteRule ^province		 						province.php
+RewriteRule ^add-new-province						add-new-province.php
+RewriteRule ^edit-province							edit-province.php
+
+RewriteRule ^city		 							city.php
+RewriteRule ^add-new-city							add-new-city.php
+RewriteRule ^edit-city								edit-city.php
+
+
+RewriteRule ^coupon 		 							copupns.php
+RewriteRule ^add-new-coupon 							add-new-copupns.php
+RewriteRule ^edit-coupon 								edit-copupns.php
+
+
+RewriteRule ^request		 							request.php
+
+RewriteRule ^site-settings							settings.php
+RewriteRule ^download-contacts						download-contacts.php
+
+
+# Services And Organizations
+
+RewriteRule ^manage-torah-and-resources-categories						manage-services-and-organizations-categories.php
+
+RewriteRule ^add-new-torah-and-resources-category						add-new-services-and-organizations-category.php
+
+RewriteRule ^edit-torah-and-resources-category						edit-services-and-organizations-category.php
+
+
+
+RewriteRule ^manage-torah-and-resources-sub-categories					manage-services-and-organizations-sub-categories.php
+
+RewriteRule ^add-new-torah-and-resources-sub-category						add-new-services-and-organizations-sub-category.php
+
+RewriteRule ^edit-torah-and-resources-sub-category						edit-services-and-organizations-sub-category.php
+
+RewriteRule ^torah-and-resources						services-and-organizations.php
+
+RewriteRule ^edit-torah-and-resources					edit-torah-and-resources.php
+
+
+
+RewriteRule ^subscribers						subscribers.php
+
+
+
+
+
+
+
+#<FilesMatch "^.*(png|jpe?g|gif)$">
+#require valid-user
+#</FilesMatch>

@@ -1,0 +1,10 @@
+#log files
+*.log
+error_log
+
+backend/include/config.php
+backend/error_log
+venobox/
+resources/
+anet_php_sdk/
+include/

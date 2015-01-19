@@ -1,0 +1,15 @@
+RewriteEngine on
+
+RewriteRule ^home$	   						   					index.php
+RewriteRule ^retailer$	 			   						    retailer.php
+RewriteRule ^torah-and-resources$	 			   				torah-and-resources.php
+RewriteRule ^services$	 			   							services.php
+RewriteRule ^entertainment$	 			   						entertainment.php
+RewriteRule ^community$	 			   							community.php
+RewriteRule ^special-offers$	 			   					special-offers.php
+RewriteRule ^about$	 			   								about.php
+RewriteRule ^listings$	 			   							listings.php
+RewriteRule ^advertise$	 			   							advertise.php
+RewriteRule ^faq$	 			   								faq.php
+RewriteRule ^legal-privacy$	 			   						legal-privacy.php
+RewriteRule ^contact$	 			   						contact.php

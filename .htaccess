@@ -1,0 +1,421 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^yiddn.com/newsite [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.yiddn.com/newsite [NC]
+RewriteRule ^(.*)$ http://yiddn.com/newsite [L,R=301,NC]
+
+
+RewriteRule ^home$	   						   								 index.php
+
+RewriteRule ^retailer$	 			   						    			 retailer.php
+
+RewriteRule ^torah-and-resources$	 			   				    		 torah-and-resources.php
+
+RewriteRule ^services$	 			   										 services.php
+
+RewriteRule ^entertainment$	 			   									 entertainment.php
+
+RewriteRule ^community$	 			   										 community.php
+
+RewriteRule ^seasonal$	 			   										 seasonal.php
+
+RewriteRule ^special-offers$	 			   								 special-offers.php
+
+RewriteRule ^about$	 			   											 about.php
+
+RewriteRule ^listings$	 			   										 listings.php
+
+RewriteRule ^advertise$	 			   										 advertise.php
+
+RewriteRule ^faqs$	 			   											 faqs.php
+
+RewriteRule ^legal-privacy$	 			   									 legal-privacy.php
+
+RewriteRule ^contact$	 			   						    			 contact.php
+
+RewriteRule ^dashboard$	 			   						    			 dashboard.php
+
+RewriteRule ^logout$	 			   						    			 logout.php
+
+RewriteRule ^search$	 			   						    			 search.php
+
+RewriteRule ^signup$	 			   						    			 signup.php
+
+RewriteRule ^cancel$	 			   						    			 cancel.php
+
+RewriteRule ^my-profile$	 			   						    		 my-profile.php
+
+RewriteRule ^bookmark$	 			   						    		     bookmarks.php
+
+RewriteRule ^bookmark-action$	 			   						    	 bookmark-action.php
+
+RewriteRule ^forgot-your-password	   		  								 forgot-your-password.php
+
+RewriteRule ^user-login	   		  								             user-login.php
+
+RewriteRule ^news-letter	   		  								         news-letter.php
+
+RewriteRule ^my-bookmarks	   		  								         mybookmarks.php
+
+RewriteRule ^submit-a-site	   		  								         submit-a-site.php
+
+
+
+
+
+RewriteRule ^retailer/([a-zA-Z0-9_-]+)$	 		                			 sub-categories-retailer.php
+
+RewriteRule ^retailer/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 				 listings-retailer.php
+
+RewriteRule ^retailer/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-retailer.php
+
+
+
+RewriteRule ^torah-resources/([a-zA-Z0-9_-]+)$	 		        			 sub-categories-torah-and-resources.php
+
+RewriteRule ^torah-resources/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 			 listings-torah-and-resources.php
+
+RewriteRule ^torah-resources/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-torah-and-resources.php
+
+
+
+
+
+RewriteRule ^city-community/([a-zA-Z0-9_-]+)$	 		             											city-community.php
+
+RewriteRule ^listings-community/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ 	 											listings-community-categories.php
+
+RewriteRule ^listings-community-categories/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 				listings-community-categories-local.php 
+
+RewriteRule ^listings-community-categories/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-community.php
+
+
+
+RewriteRule ^entertainment/([a-zA-Z0-9_-]+)$	 		                		 sub-categories-entertainment.php
+
+RewriteRule ^entertainment/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 				 listings-entertainment.php
+
+RewriteRule ^entertainment/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-entertainment.php
+
+
+
+
+
+RewriteRule ^services/([a-zA-Z0-9_-]+)$	 		                		 sub-categories-services.php
+
+RewriteRule ^services/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 				 listings-services.php
+
+RewriteRule ^services/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-services.php
+
+
+#Services
+
+RewriteRule ^seasonal/([a-zA-Z0-9_-]+)$	 				     listings-seasonal.php
+
+RewriteRule ^seasonal/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$	 details-seasonal.php
+
+
+
+
+
+
+#General Directory
+
+
+
+RewriteRule ^general-directory-step1$	    			 general-directory-step1.php
+
+RewriteRule ^general-directory-step1-script$	    	 general-directory-step1-script.php
+
+
+
+RewriteRule ^general-directory-step2$	    			 general-directory-step2.php
+
+RewriteRule ^general-directory-step2-script$	    	 general-directory-step2-script.php
+
+
+
+RewriteRule ^general-directory-step3$	    			 general-directory-step3.php
+
+RewriteRule ^general-directory-step3-script$	    	 general-directory-step3-script.php
+
+
+
+RewriteRule ^general-directory-step4$	    			 general-directory-step4.php
+
+RewriteRule ^general-directory-step4-script$	    	 general-directory-step4-script.php
+
+
+
+RewriteRule ^update-general-directory-step1$	         update-general-directory-step1.php
+
+RewriteRule ^update-general-directory-step1-script$	     update-general-directory-step1-script.php
+
+
+
+RewriteRule ^update-general-directory-step2$	         update-general-directory-step2.php
+
+RewriteRule ^update-general-directory-step2-script$	     update-general-directory-step2-script.php
+
+
+
+RewriteRule ^update-general-directory-step3$	         update-general-directory-step3.php
+
+RewriteRule ^update-general-directory-step3-script$	     update-general-directory-step3-script.php
+
+
+
+RewriteRule ^update-general-directory-step4$	         update-general-directory-step4.php
+
+RewriteRule ^update-general-directory-step4-script$	     update-general-directory-step4-script.php
+
+
+
+
+
+#Jewish Etailers
+
+
+
+RewriteRule ^jewish-etailers-step1$	    			     jewish-etailers-step1.php
+
+RewriteRule ^jewish-etailers-step1-script$	    	     jewish-etailers-step1-script.php
+
+
+
+RewriteRule ^jewish-etailers-step2$	    			     jewish-etailers-step2.php
+
+RewriteRule ^jewish-etailers-step2-script$	    	     jewish-etailers-step2-script.php
+
+
+
+RewriteRule ^jewish-etailers-step3$	    			     jewish-etailers-step3.php
+
+RewriteRule ^jewish-etailers-step3-script$	    	     jewish-etailers-step3-script.php
+
+
+
+RewriteRule ^jewish-etailers-step4$	    			     jewish-etailers-step4.php
+
+RewriteRule ^jewish-etailers-step4-script$	    	     jewish-etailers-step4-script.php
+
+
+
+
+
+RewriteRule ^update-jewish-etailers-step1$	    		update-jewish-etailers-step1.php
+
+RewriteRule ^update-jewish-etailers-step1-script$	    update-jewish-etailers-step1-script.php
+
+
+
+RewriteRule ^update-jewish-etailers-step2$	    		update-jewish-etailers-step2.php
+
+RewriteRule ^update-jewish-etailers-step2-script$	    update-jewish-etailers-step2-script.php
+
+
+
+RewriteRule ^update-jewish-etailers-step3$	    		update-jewish-etailers-step3.php
+
+RewriteRule ^update-jewish-etailers-step3-script$	    update-jewish-etailers-step3-script.php
+
+
+
+RewriteRule ^update-jewish-etailers-step4$	    		update-jewish-etailers-step4.php
+
+RewriteRule ^update-jewish-etailers-step4-script$	    update-jewish-etailers-step4-script.php
+
+
+
+
+
+#Torah and Resources
+
+
+
+RewriteRule ^torah-and-resources-step1$	    			    torah-and-resources-step1.php
+
+RewriteRule ^torah-and-resources-step1-script$	    	    torah-and-resources-step1-script.php
+
+
+
+RewriteRule ^torah-and-resources-step2$	    			    torah-and-resources-step2.php
+
+RewriteRule ^torah-and-resources-step2-script$	    	    torah-and-resources-step2-script.php
+
+
+
+RewriteRule ^torah-and-resources-step3$	    			    torah-and-resources-step3.php
+
+RewriteRule ^torah-and-resources-step3-script$	    	    torah-and-resources-step3-script.php
+
+
+
+RewriteRule ^torah-and-resources-step4$	    			    torah-and-resources-step4.php
+
+RewriteRule ^torah-and-resources-step4-script$	    	    torah-and-resources-step4-script.php
+
+
+
+RewriteRule ^update-torah-and-resources-step1$	    	   update-torah-and-resources-step1.php
+
+RewriteRule ^update-torah-and-resources-step1-script$	   update-torah-and-resources-step1-script.php
+
+
+
+RewriteRule ^update-torah-and-resources-step2$	           update-torah-and-resources-step2.php
+
+RewriteRule ^update-torah-and-resources-step2-script$	   update-torah-and-resources-step2-script.php
+
+
+
+RewriteRule ^update-torah-and-resources-step3$	    	   update-torah-and-resources-step3.php
+
+RewriteRule ^update-torah-and-resources-step3-script$	   update-torah-and-resources-step3-script.php
+
+
+
+RewriteRule ^update-torah-and-resources-step4$	    	   update-torah-and-resources-step4.php
+
+RewriteRule ^update-torah-and-resources-step4-script$      update-torah-and-resources-step4-script.php
+
+
+
+
+#Entertainment
+
+
+
+RewriteRule ^entertainment-step1$	    			     entertainment-step1.php
+
+RewriteRule ^entertainment-step1-script$	    	     entertainment-step1-script.php
+
+
+
+RewriteRule ^entertainment-step2$	    			     entertainment-step2.php
+
+RewriteRule ^entertainment-step2-script$	    	     entertainment-step2-script.php
+
+
+
+RewriteRule ^entertainment-step3$	    			     entertainment-step3.php
+
+RewriteRule ^entertainment-step3-script$	    	     entertainment-step3-script.php
+
+
+
+RewriteRule ^entertainment-step4$	    			     entertainment-step4.php
+
+RewriteRule ^entertainment-step4-script$	    	     entertainment-step4-script.php
+
+
+
+
+
+RewriteRule ^update-entertainment-step1$	    		update-entertainment-step1.php
+
+RewriteRule ^update-entertainment-step1-script$	    update-entertainment-step1-script.php
+
+
+
+RewriteRule ^update-entertainment-step2$	    		update-entertainment-step2.php
+
+RewriteRule ^update-entertainment-step2-script$	    update-entertainment-step2-script.php
+
+
+
+RewriteRule ^update-entertainment-step3$	    		update-entertainment-step3.php
+
+RewriteRule ^update-entertainment-step3-script$	    update-entertainment-step3-script.php
+
+
+
+RewriteRule ^update-entertainment-step4$	    		update-entertainment-step4.php
+
+RewriteRule ^update-entertainment-step4-script$	    update-entertainment-step4-script.php
+
+
+#Local Directory
+
+
+
+RewriteRule ^local-directory-step1$	    			       local-directory-step1.php
+
+RewriteRule ^local-directory-step1-script$	    	       local-directory-step1-script.php
+
+
+
+RewriteRule ^local-directory-step2$	    			       local-directory-step2.php
+
+RewriteRule ^local-directory-step2-script$	    	       local-directory-step2-script.php
+
+
+
+RewriteRule ^local-directory-step3$	    			       local-directory-step3.php
+
+RewriteRule ^local-directory-step3-script$	    	       local-directory-step3-script.php
+
+
+
+RewriteRule ^local-directory-step4$	    			       local-directory-step4.php
+
+RewriteRule ^local-directory-step4-script$	    	       local-directory-step4-script.php
+
+
+
+
+
+RewriteRule ^update-local-directory-step1$	    		   update-local-directory-step1.php
+
+RewriteRule ^update-local-directory-step1-script$	       update-local-directory-step1-script.php
+
+
+
+RewriteRule ^update-local-directory-step2$	    		   update-local-directory-step2.php
+
+RewriteRule ^update-local-directory-step2-script$	       update-local-directory-step2-script.php
+
+
+
+RewriteRule ^update-local-directory-step3$	    		   update-local-directory-step3.php
+
+RewriteRule ^update-local-directory-step3-script$	       update-local-directory-step3-script.php
+
+
+
+RewriteRule ^update-local-directory-step4$	    		   update-local-directory-step4.php
+
+RewriteRule ^update-local-directory-step4-script$	       update-local-directory-step4-script.php
+
+<IfModule mod_expires.c>
+
+ExpiresActive On
+
+ExpiresByType image/jpg "access 1 year"
+
+ExpiresByType image/jpeg "access 1 year"
+
+ExpiresByType image/gif "access 1 year"
+
+ExpiresByType image/png "access 1 year"
+
+ExpiresByType text/css "access 1 month"
+
+ExpiresByType text/html "access 1 month"
+
+ExpiresByType application/pdf "access 1 month"
+
+ExpiresByType text/x-javascript "access 1 month"
+
+ExpiresByType application/x-shockwave-flash "access 1 month"
+
+ExpiresByType image/x-icon "access 1 year"
+
+ExpiresDefault "access 1 month"
+
+</IfModule>
+
+
+RewriteCond %{HTTP_HOST} ^yiddn.com/newsite [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.yiddn.com/newsite [NC]
+RewriteRule ^(.*)$ http://yiddn.com/newsite [L,R=301,NC]

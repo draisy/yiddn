@@ -1,0 +1,103 @@
+nav {
+	position: absolute;
+	left: 0;
+	top:528px;
+	width: 100%;
+	background:#939598;
+	     -webkit-box-shadow: 0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+-moz-box-shadow:    0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+box-shadow:         0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+z-index:2000;
+  }
+  
+  
+nav.inner {
+	position:absolute;
+	left: 0;
+	top:128px;
+	width: 100%;
+	background:#939598;
+	     -webkit-box-shadow: 0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+-moz-box-shadow:    0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+box-shadow:         0px 6px 11px 0px rgba(50, 50, 50, 0.94);
+z-index:1;
+  }
+  
+  
+     
+.nav li { list-style: none;  }
+.nav > li { padding: 0; float: left; position: relative; }
+.nav > li > a {
+	float: left;
+	font-size:20px;
+	color: #fff;
+			line-height: 41px;
+				letter-spacing:-1px;
+				text-align: center;
+				text-decoration: none;
+				color: #fff;
+ 				padding:0 43px 0 0px;
+				font-family: 'Station Medium';
+				text-transform:uppercase;
+z-index: 1;	
+	
+	
+}
+
+.nav > li:hover > a { color:#8A0E6E; }
+.nav > li:first-child > a { border-left: 0; }
+.nav > li:last-child > a { border-right: 0; }
+.nav > li:hover > div { display: block; }
+
+/* MEGA DROP DOWN */
+
+.nav > li > div {
+	position: absolute;
+	left: 0;
+	top: 40px;
+	display: none;
+	background: #939598;
+	padding: 10px 10px;
+ 	overflow: hidden;
+	
+	
+}
+ .nav > li > div.right { right: 0; left: auto }
+.container-1, .container-2, .container-3, .container-4 {  z-index:1000; }
+
+
+/* COLUMNS */
+.col1 { margin: 10px 0; float: left; padding: 0 10px; font-size:15px;
+	color: #fff;
+			line-height: 30px;
+  				text-decoration: none;
+ 				font-family: 'Muli', sans-serif;
+				text-transform:uppercase;
+				margin-right:30px;
+}
+
+.col1 li a{ color:#fff; text-decoration:none;}
+
+  .col1 li a:hover{ color:#8A0E6E; text-decoration:none;}
+
+ 
+	 
+
+	/* 4 Column */
+	.container-4 { width: 400px; }
+	.container-4 .col1 { width: 35%; }
+	.container-4 .col2 { width: 50% }
+	.container-4 .col3 { width: 75% }
+	.container-4 .col4 { width: 100% }
+
+
+	 
+
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

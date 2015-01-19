@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Yiddn - Upload Listing</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/inner.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/form.css" type="text/css" media="all" />
+ <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/dropdown.css" />
+  </head>
+<body>
+
+<!--Header -->  
+ <header id="header" style="top:0">   
+ <div class="shell">
+ 
+  <div id="nav-top">
+  <div id="loginContainer">  
+                <a href="#" id="loginButton"><span>LOG IN</span></a>
+                 <div id="loginBox">                
+                    <form id="loginForm">
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Email Address</label>
+                                <input type="text" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Sign in" />
+                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                        </fieldset>
+                        <span><a href="#">Forgot your password?</a></span>
+                    </form>
+                </div>
+            </div>
+   <div class="dot">.</div> 
+  <a href="#">JOIN</a>
+  
+  <div class="shellsearch">
+  <form class="searchform" method="get"   action="#">
+<input class="searchfield" type="text" placeholder='What are you looking for?' name="keywords" /> IN
+<input class="searchfield2" type="text" placeholder='Flatbush' name="Location" id="Location" />
+<input class="searcbutton" type="submit" value="&nbsp;" name="Go" id="Go"/>
+</form>
+    </div> 
+   </div>
+ 
+ <div id="logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+   </div>
+  </header> 
+<!--/Header -->
+
+<!-- Main -->
+<section id="content-main">
+<div class="master">
+<div class="cl">&nbsp;</div>
+<div class="cl">&nbsp;</div>
+      <div class="inner-col-left-dashboard">
+		<div id="contact-area">
+		<h1>Post Your Listing</h1><br />
+		<form method="post" enctype="multipart/form-data" id="frm1" name="frm1">     
+		<fieldset class="payment_plan">
+        <legend>
+        <h2>Choose a Payment Plan</h2>
+        </legend>
+        <p style="font-size:14px; width:100%; font-family: Verdana, Arial, Helvetica, sans-serif;">You can save up to 20% by paying in advance!</p>
+        <label for="PaymentPlan"></label>
+        <select id="PaymentPlan" name="PaymentPlan">
+        <option value="">Choose a payment plan</option>
+        <option value="10">Get 10% OFF if paid quarterly</option>
+        <option value="20">Get 20% OFF if paid half yearly</option>
+        <option value="RECUR">Regular Charges as indicated - Charged every month</option>
+        <option value="ONETIME">Only charge for one month</option>     
+        </select>
+        <input id="TotalCost" name="TotalCost" size="50" style="border:0px; width:auto; font-size:18px;"/>
+                <br />
+        <small class="note">Note:Unless cancelled, your subscriptions will be renewed at the selected rate. Subscriptions can be revised or cancelled at any time from your account page.<div>&nbsp;</div></small>
+
+      </fieldset>
+      
+      
+    <fieldset>
+      <legend><h2>Discount Coupons</h2></legend>
+      <label for="Coupon">Enter Coupon Code:&nbsp; &nbsp; <span style="font-size:12px;">(case sensitive)</span></label><br />
+      <input name="Coupon" id="Coupon" type="text" style="width:250px; float:left; margin-right:10px;"  />
+      <input type="button" value="Apply" onclick="CouponFun();" class="applyCouponbtn" />
+      <input name="CouponDiscount" id="CouponDiscount" type="hidden" /><div class="clr">&nbsp;</div>
+	  <br/>
+      <small class="note">Coupon code expires after one-time use. It applies to the first payment of your selected billing cycle only.<div>&nbsp;</div></small>
+   </fieldset>
+      
+	  <fieldset>
+		<legend>
+		<h2>Payment Details</h2>
+		</legend>
+		
+		<label for="NameasonCard">Name as on Card :</label>
+		<input name="NameasonCard" id="NameasonCard" type="text" />
+		<br />
+		<label for="CreditCard">Card Number:</label>
+		<input name="CreditCard" id="CreditCard" type="text" />
+		<br />
+		<label for="NameonCard">Credit Card type:</label>
+		<select name="NameonCard" id="NameonCard">
+		 <option value="Visa">Visa</option>
+		 <option value="MasterCard">MasterCard</option>
+		 <option value="AmEx">American Express</option>
+		 <option value="Discover">Discover</option>
+        </select>
+        <br />
+        <label for="Expiry">Expiry Date:</label>
+          <br />
+
+<select name="ExpMon" id="ExpMon" title="select a month" style="width:100px;float:left; margin-right:10px;"> 
+        <option value="01">Jan</option> 
+        <option value="02">Feb</option> 
+        <option value="03">Mar</option>
+        <option value="04">Apr</option> 
+        <option value="05">May</option> 
+        <option value="06">June</option> 
+        <option value="07">July</option> 
+        <option value="08">Aug</option> 
+        <option value="09">Sept</option> 
+        <option value="10">Oct</option> 
+        <option value="11">Nov</option> 
+        <option value="12">Dec</option> 
+ </select>   
+<select name="ExpYear" id="ExpYear" title="select a year" style="width:100px;"> 
+        <option value="2014">2014</option> 
+        <option value="2015">2015</option> 
+        <option value="2016">2016</option>
+        <option value="2017">2017</option> 
+        <option value="2018">2018</option> 
+        <option value="2019">2019</option> 
+        <option value="2020">2020</option> 
+        <option value="2021">2021</option> 
+        <option value="2022">2022</option> 
+        <option value="2023">2023</option> 
+        <option value="2024">2024</option> 
+</select>
+        <br />
+        <label for="CVV">CVV:</label>
+        <input name="CVV" id="CVV" type="text" />
+      </fieldset>
+		<br/>
+	<div class="cl">&nbsp;</div>
+	  <a href="step3.html" class="dashboard previous" style="float:left; margin:0; color:#bd0081;"><- PREVIOUS</a>
+      <button type="submit" name="submit" style="float:right; margin-right:65px;"  onclick="return validationFun()">Submit</button>
+      </form>
+    </div>
+   <div class="cl">&nbsp;</div>
+   </div>
+</section>
+	  
+  <!-- End Main --> 
+
+
+<div class="cl">&nbsp;</div>
+
+ <footer>
+ <div class="shellfooter">
+  <div class="shell">
+    <div class="links">
+          <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Listings</a>
+        <a href="#">Advertise</a>
+        <a href="#">Faq</a>
+        <a href="#">Legal & Privacy</a>
+        <a href="#">Contact</a>
+  </div>
+  
+  <p class="copyright">
+ Yiddn.com is a registered trademark. No portion of this site or its content may be duplicated or distributed. <br>
+ © Copyright 2014 Yiddn Inc. All rights reserved </p>
+  
+   </div>
+    </div> 
+    
+   
+     </footer>
+	</body>
+</html>

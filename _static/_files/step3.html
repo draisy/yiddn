@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Yiddn - Upload Listing</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/inner.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/form.css" type="text/css" media="all" />
+ <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/dropdown.css" />
+  </head>
+<body>
+
+<!--Header -->  
+ <header id="header" style="top:0">   
+ <div class="shell">
+ 
+  <div id="nav-top">
+  <div id="loginContainer">  
+                <a href="#" id="loginButton"><span>LOG IN</span></a>
+                 <div id="loginBox">                
+                    <form id="loginForm">
+                        <fieldset id="body">
+                            <fieldset>
+                                <label for="email">Email Address</label>
+                                <input type="text" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Sign in" />
+                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+                        </fieldset>
+                        <span><a href="#">Forgot your password?</a></span>
+                    </form>
+                </div>
+            </div>
+   <div class="dot">.</div> 
+  <a href="#">JOIN</a>
+  
+  <div class="shellsearch">
+  <form class="searchform" method="get"   action="#">
+<input class="searchfield" type="text" placeholder='What are you looking for?' name="keywords" /> IN
+<input class="searchfield2" type="text" placeholder='Flatbush' name="Location" id="Location" />
+<input class="searcbutton" type="submit" value="&nbsp;" name="Go" id="Go"/>
+</form>
+    </div> 
+   </div>
+ 
+ <div id="logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+   </div>
+  </header> 
+<!--/Header -->
+
+<!-- Main -->
+<section id="content-main">
+<div class="master">
+<div class="cl">&nbsp;</div>
+<div class="cl">&nbsp;</div>
+      <div class="inner-col-left-dashboard">
+		<div id="contact-area">
+      <h1>Post Your Listing</h1><br />
+      <form method="post" enctype="multipart/form-data" id="frm1" name="frm1">
+     
+      <fieldset>
+        <legend>
+        <h2>STEP 3: Where do you want your ad to show?</h2>
+        </legend>
+
+		 <fieldset style="width:97%">
+          <legend>Category 1</legend>
+             <a  class="big-link" data-reveal-id="Modal" style="float:right; margin-bottom:10px;">Want to suggest a new Category?</a>
+
+		<select name="Category1" id="Category">
+			<option value="">Please select</option>
+
+		</select>
+          
+          <input type="checkbox" name="upgrade1" value="4.99" id="upgrade" />
+          <label for="upgrade">Yes, I want to upgrade to a BOLD listing - only $4.99 a month.</label>
+          <br />
+         
+          <input type="checkbox" name="Premium" value="499" id="Premium"  class="chk" onclick="showMe('div1')" />
+          <label for="Premium">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+
+         
+          <div id="div1" style="display:none" class="upload_div">
+			<small class="note">Note: Only JPG, PNG, and GIF formats will be approved. Animated banners are only acceptable for Pinned Ads. Ads uploaded outside of these formats will not be approved.<div>&nbsp;</div></small>
+	        <br /><br />
+            <p><strong>Upload banner </strong>
+              <input name="Banner1" type="file" />
+            </p>
+            <small class="note"><em> Banner size should be exactly 302 x 165*</em><div>&nbsp;</div></small> </div>
+        </fieldset>
+       <fieldset style="width:97%">
+          <legend>Category 2 (optional)</legend>
+		<select name="Category2">
+			<option value="">Please select</option>
+
+		</select>
+          
+          <input type="checkbox" name="upgrade2" value="4.99" id="upgrade2"/>
+          <label for="upgrade2">Yes, I want to upgrade to a BOLD listing - only $4.99 a month.</label>
+          <br />
+          <input type="checkbox" name="Premium2" value="499" id="Premium2" class="chk" onclick="showMe('div2')"/>
+          <label for="Premium2">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+          <div id="div2" style="display:none" class="upload_div">
+            <small class="note">Note: Only JPG, PNG, and GIF formats will be approved. Animated banners are only acceptable for Pinned Ads. Ads uploaded outside of these formats will not be approved.<div>&nbsp;</div></small>
+	        <br /><br />
+            <p><strong>Upload banner </strong>
+              <input name="Banner2" type="file" />
+            </p>
+            <small class="note"><em> Banner size should be exactly 302 x 165*</em><div>&nbsp;</div></small> </div>
+        </fieldset>
+       <fieldset style="width:97%">
+          <legend>Category 3 (optional)</legend>
+		<select name="Category3">
+			<option value="">Please select</option>
+		  
+		</select>
+          <input type="checkbox" name="upgrade3" value="4.99" id="upgrade3"/>
+          <label for="upgrade3">Yes, I want to upgrade to a BOLD listing - only $4.99 a month.</label>
+          <br />
+          <input type="checkbox" name="Premium3" value="499" id="Premium3" class="chk" onclick="showMe('div3')"/>
+          <label for="Premium3">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+          <div id="div3" style="display:none" class="upload_div">
+            <small class="note">Note: Only JPG, PNG, and GIF formats will be approved. Animated banners are only acceptable for Pinned Ads. Ads uploaded outside of these formats will not be approved.<div>&nbsp;</div></small>
+       		<br /><br />
+            <p><strong>Upload banner </strong>
+              <input name="Banner3" type="file" />
+            </p>
+            <small class="note"><em> Banner size should be exactly 302 x 165*</em><div>&nbsp;</div></small> </div>
+        </fieldset>   
+      
+      <fieldset style="width:97%">
+        <legend>City</legend>
+		<select name="City" id="City">
+		<option value="">Please select</option>
+	    
+		</select>
+      </fieldset>
+	</fieldset>	
+		
+   </div> 
+		
+		 <a href="step2" class="dashboard previous" style="float:left"><- PREVIOUS</a>
+		 <a href="#" class="dashboard previous" style="float:right">NEXT -></a>
+		 
+    </div>
+   <div class="clr">&nbsp;</div>
+   </div>
+</section>
+  <!-- End Main --> 
+
+
+<div class="cl">&nbsp;</div>
+
+ <footer>
+ <div class="shellfooter">
+  <div class="shell">
+    <div class="links">
+          <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Listings</a>
+        <a href="#">Advertise</a>
+        <a href="#">Faq</a>
+        <a href="#">Legal & Privacy</a>
+        <a href="#">Contact</a>
+  </div>
+  
+  <p class="copyright">
+ Yiddn.com is a registered trademark. No portion of this site or its content may be duplicated or distributed. <br>
+ © Copyright 2014 Yiddn Inc. All rights reserved </p>
+  
+   </div>
+    </div> 
+    
+   
+     </footer>
+	</body>
+</html>

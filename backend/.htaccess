@@ -1,0 +1,199 @@
+RewriteEngine on
+#ErrorDocument 206 /Error/206
+#ErrorDocument 301 /Error/301
+#ErrorDocument 400 /Error/400
+#ErrorDocument 401 /Error/401
+#ErrorDocument 403 /Error/403
+#ErrorDocument 404 /Error/404
+#ErrorDocument 500 /Error/500
+#ErrorDocument 503 /Error/503
+
+RewriteRule ^admin-login   								index.php
+RewriteRule ^login	    								login.php
+RewriteRule ^logout	   									logout.php
+RewriteRule ^dashboard   								dashboard.php
+RewriteRule ^account-setting							account-setting.php
+
+RewriteRule ^manage-admin-users							manage-admin-users.php
+RewriteRule ^add-new-admin-user							add-new-admin-user.php
+RewriteRule ^edit-admin-user							edit-admin-user.php
+
+RewriteRule ^manage-site-users							manage-site-users.php
+RewriteRule ^add-new-site-user							add-new-site-user.php
+RewriteRule ^edit-site-user								edit-site-user.php
+
+# Advertisement
+
+RewriteRule ^manage-adcircular-categories			manage-advertisement-categories.php
+RewriteRule ^add-new-adcircular-category			add-new-advertisement-category.php
+RewriteRule ^edit-adcircular-category				edit-advertisement-category.php
+RewriteRule ^adcircular								advertisement.php
+RewriteRule ^edit-adcircular$						edit-adcircular.php
+
+
+
+RewriteRule ^manage-adcircular-sub-categories		manage-advertisement-sub-categories.php
+RewriteRule ^add-new-adcircular-sub-category		add-new-advertisement-sub-category.php
+RewriteRule ^edit-adcircular-sub-category			edit-advertisement-sub-category.php
+
+# Business Directory
+
+RewriteRule ^manage-jewish-e-tailers-categories manage-business-directory-categories.php
+	
+RewriteRule ^add-new-jewish-e-tailers-category		add-new-business-directory-category.php
+
+RewriteRule ^edit-jewish-e-tailers-category			edit-business-directory-category.php
+
+
+
+RewriteRule ^orders									orders.php
+
+RewriteRule ^jewish-e-tailers						business-directory.php
+
+RewriteRule ^manage-jewish-e-tailers-sub-categories	manage-business-directory-sub-categories.php
+
+RewriteRule ^add-new-jewish-e-tailers-sub-category	add-new-business-directory-sub-category.php
+
+RewriteRule ^edit-jewish-e-tailers-sub-category		edit-business-directory-sub-category.php
+
+RewriteRule ^edit-jewish-e-tailers				    edit-jewish-e-tailers.php
+
+# Local Directory
+
+RewriteRule ^manage-local-directory-categories			manage-local-directory-categories.php
+RewriteRule ^add-new-local-directory-category			add-new-local-directory-category.php
+RewriteRule ^edit-local-directory-category				edit-local-directory-category.php
+RewriteRule ^local-directory						   local-directory.php
+RewriteRule ^edit-local-directory$					   edit-local-directory.php
+
+
+
+
+RewriteRule ^manage-local-directory-sub-categories		manage-local-directory-sub-categories.php
+RewriteRule ^add-new-local-directory-sub-category		add-new-local-directory-sub-category.php
+RewriteRule ^edit-local-directory-sub-category			edit-local-directory-sub-category.php
+# Regions
+
+RewriteRule ^country		 						country.php
+RewriteRule ^add-new-country						add-new-country.php
+RewriteRule ^edit-country							edit-country.php
+
+RewriteRule ^province		 						province.php
+RewriteRule ^add-new-province						add-new-province.php
+RewriteRule ^edit-province							edit-province.php
+
+RewriteRule ^city		 							city.php
+RewriteRule ^add-new-city							add-new-city.php
+RewriteRule ^edit-city								edit-city.php
+
+
+RewriteRule ^coupon 		 							copupns.php
+RewriteRule ^add-new-coupon 							add-new-copupns.php
+RewriteRule ^edit-coupon 								edit-copupns.php
+
+
+RewriteRule ^request		 							request.php
+
+RewriteRule ^site-settings							settings.php
+RewriteRule ^download-contacts						download-contacts.php
+
+
+# Services And Organizations
+
+RewriteRule ^manage-torah-and-resources-categories						manage-services-and-organizations-categories.php
+
+RewriteRule ^add-new-torah-and-resources-category						add-new-services-and-organizations-category.php
+
+RewriteRule ^edit-torah-and-resources-category						edit-services-and-organizations-category.php
+
+
+
+RewriteRule ^manage-torah-and-resources-sub-categories					manage-services-and-organizations-sub-categories.php
+
+RewriteRule ^add-new-torah-and-resources-sub-category						add-new-services-and-organizations-sub-category.php
+
+RewriteRule ^edit-torah-and-resources-sub-category						edit-services-and-organizations-sub-category.php
+
+RewriteRule ^torah-and-resources						services-and-organizations.php
+
+RewriteRule ^edit-torah-and-resources					edit-torah-and-resources.php
+
+
+# Jewish Entertainment
+
+RewriteRule ^manage-entertainment-categories						manage-entertainment-categories.php
+
+RewriteRule ^add-new-entertainment-category						add-new-entertainment-category.php
+
+RewriteRule ^edit-entertainment-category						edit-entertainment-category.php
+
+
+
+RewriteRule ^manage-entertainment-sub-categories					manage-entertainment-sub-categories.php
+
+RewriteRule ^add-new-entertainment-sub-category						add-new-entertainment-sub-category.php
+
+RewriteRule ^edit-entertainment-sub-category						edit-entertainment-sub-category.php
+
+RewriteRule ^jewish-entertainment						jewish-entertainment.php
+
+RewriteRule ^edit-jewish-entertainment					edit-jewish-entertainment.php
+
+
+# Services
+
+RewriteRule ^manage-services-categories						manage-services-categories.php
+
+RewriteRule ^add-new-services-category						add-new-services-category.php
+
+RewriteRule ^edit-services-category							edit-services-category.php
+
+
+
+RewriteRule ^manage-services-sub-categories					manage-services-sub-categories.php
+
+RewriteRule ^add-new-services-sub-category					add-new-services-sub-category.php
+
+RewriteRule ^edit-services-sub-category						edit-services-sub-category.php
+
+RewriteRule ^services$										services.php
+
+RewriteRule ^edit-services$									edit-services.php
+
+
+# Seasonal
+
+RewriteRule ^manage-seasonal-categories						manage-seasonal-categories.php
+
+RewriteRule ^add-new-seasonal-category						add-new-seasonal-category.php
+
+RewriteRule ^edit-seasonal-category							edit-seasonal-category.php
+
+
+
+RewriteRule ^manage-seasonal-sub-categories					manage-seasonal-sub-categories.php
+
+RewriteRule ^add-new-seasonal-sub-category					add-new-seasonal-sub-category.php
+
+RewriteRule ^edit-seasonal-sub-category						edit-seasonal-sub-category.php
+
+RewriteRule ^seasonal$										seasonal.php
+
+RewriteRule ^edit-seasonal$									edit-seasonal.php
+
+
+RewriteRule ^subscribers									subscribers.php
+
+
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond $1 ^(.*|manage-admin-users|manage-site-users|adcircular|jewish-e-tailers|jewish-entertainment|local-directory|services|seasonal|torah-and-resources|orders|account-setting|backend\.php) [NC]
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+
+
+
+#<FilesMatch "^.*(png|jpe?g|gif)$">
+#require valid-user
+#</FilesMatch>

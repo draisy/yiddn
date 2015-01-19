@@ -1,0 +1,27 @@
+<h1 style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;Name
+
+<a class="close-reveal-modal" style="text-align:right; float:right; padding-right:5px;">X Close</a>
+
+</h1> 
+ 
+          		
+		<div class="listings-div3">
+                            
+              <span class="name">
+              <strong>Website:</strong> #
+	      </span>
+                          
+              <span class='st_facebook'></span>
+              <span class='st_twitter'></span>
+              <span class='st_linkedin'></span>
+              <span class='st_googleplus'></span>
+              <span class='st_pinterest'></span>
+              <span class='st_email'></span>
+              <span class='st_sharethis'></span>
+                            
+                            
+              <script type="text/javascript">var switchTo5x=true;</script>
+              <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+              <script type="text/javascript">stLight.options({publisher: "67f93f04-fc6a-415b-b08f-158e2e51f406", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+                            
+             </div>

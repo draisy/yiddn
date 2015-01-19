@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<!-- Add jQuery library -->
+ 
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- Add venobox -->
+<link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="venobox/venobox.min.js"></script>
+
+ 
+    <script type="text/javascript">
+         $(document).ready(function(){
+            $('.venobox').venobox({
+                numeratio: false,
+                infinigall: true,
+                border: '20px',
+            });
+            $('.venoboxvid').venobox({
+                bgcolor: '#000'
+            });
+            $('.venoboxframe').venobox({
+                border: '6px'
+            });
+            $('.venoboxinline').venobox({
+                framewidth: '300px',
+                frameheight: 'auto',
+                border: '10px',
+                bgcolor: '#f46f00',
+                titleattr: 'data-title',
+            });
+            $('.venoboxajax').venobox({
+                border: '30px;',
+                frameheight: '220px'
+            });
+        })
+    </script>
+
+
+    <style type="text/css">
+.trans {
+    width: 100px;
+    height: 100px;
+    background: #ff9c2f;
+    -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
+    display: block;
+    float: left;
+    padding:10px;
+    margin-left: 10px;
+} 
+.trans:hover{
+    background: #b25cda;
+}
+    </style>
+</head>
+
+<body>
+ 
+         <a class="btn btn-default venoboxframe" data-type="iframe" title="State Fayre Bakery
+" href="http://www.yiddn.com/newsite/retailer/Bakery/bakery-wholesale/state-fayre-bakery">mail.com</a>
+       
+ 
+</body>
+</html>
