@@ -148,7 +148,7 @@ data-type="iframe"  href="'.$data1['Seo'].'/'.$data_row['Seo'].'">
 	</div>
     
    	<div id='sidebar'>
-    <h3>Featured Ads</h3><br>
+    <!-- <h3>Featured Ads</h3> --><br>
 
 <?php require_once('ads-listings-seasonal.php'); ?>
 
@@ -167,7 +167,7 @@ data-type="iframe"  href="'.$data1['Seo'].'/'.$data_row['Seo'].'">
  <div class="ad1"> 
   <h2>Your listing is FREE! <a class="add-btn" href="<?php echo ADDRESS_SITE;?>dashboard">Add yours here.</a></h2>
     
-	<h3>Featured Ads</h3>
+	<h3>Featured Ad</h3>
 <?php 
   function randomImage ($array) {
   $total = count($array);

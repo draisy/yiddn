@@ -132,7 +132,7 @@ $a_count=1;
 	</div>
     
    	<div id='sidebar'>
-    <h3>Premium Ad</h3><br>
+    <!-- <h3>Premium Ad</h3> --><br>
 
 <?php require_once('ads-listings-community.php'); ?>
 

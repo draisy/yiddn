@@ -35,6 +35,7 @@ WHERE `Status`='1' AND `Id_Local` IN (".$record_id_local."0)
 $result = $db->query($Search);
 $total  = $result->num_rows;
 if($total > 0){
+	$featured_text = false;
 	while ($data_row = $result->fetch_assoc()) 
 		{
 	$city        = $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data_row['City'].'"');
@@ -88,7 +89,9 @@ $link = "listings-community-categories/".cleanURL($data2_['CitySeo']).'/'.cleanU
 					
 					?>		
 				
-<?php if($data_row['Banner']!=""){?>   
+<?php if($data_row['Banner']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?>  
 <div>
 <a href="<?=$link?>" class="btn btn-default venoboxframe" data-type="iframe" title="<?=$data_row['CompanyName'];?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner'];?>" /></span>

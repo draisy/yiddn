@@ -101,7 +101,7 @@ $(document).ready(function() {
     <legend><h5>Choose your Ad Type</h5></legend>
   <div class="element-checkbox"  title="Checkboxes" >
 <label>
-<input type="checkbox" value="99" id="large"  name="large" class="chk" onclick="showMe('div1')"/><span>Large Top Banner - $99.00 / month (Pinned at top of the  page)</span>
+<input type="checkbox" value="499" id="large"  name="large" class="chk" onclick="showMe('div1')"/><span>Large Top Banner - $499.00 / month (Pinned at top of the  page)</span>
 </label>
 
 <div id="div1" style="display:none" class="upload_div">

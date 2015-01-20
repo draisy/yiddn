@@ -348,7 +348,7 @@ $link = "listings-community-categories/".cleanURL($data2_['CitySeo']).'/'.cleanU
 	</div>
     
    	<div id='sidebar'>
-    <h3>Premium Ad</h3><br>
+    <!-- <h3>Premium Ad</h3><br> -->
 
 <?php require_once('ads-listings-search.php'); ?>
 

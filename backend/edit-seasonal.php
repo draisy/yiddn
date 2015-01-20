@@ -418,21 +418,12 @@ return confirm("Are you sure you want to delete this Logo?");
 <select name="Category1" id="Category" class="form-control">
 	<option value="">Please select</option>
 <?php
-$query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" ORDER By Title ASC';
+$query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" AND `Status`="1" ORDER By Title ASC';
 $result = $db->query($query);
 while ($row = $result->fetch_assoc()) 
 {	
 ?>
- <optgroup label="<?php echo $row['Title'];?>">
-    <?php 
-    $query2 = 'SELECT * FROM `sub-categories` where `Cid`="'.$row['Id'].'"';
-    $result2 = $db->query($query2);
-    while ($row2 = $result2->fetch_assoc()) 
-    {
-    ?>
-     <option value="<?php echo $row2['Id'];?>" <?php if($row_result->Category==$row2['Id']){echo 'selected="selected"';}?>><?php echo $row2['Title'];?></option>
-    <?php }?>
- </optgroup>
+     <option value="<?php echo $row['Id'];?>" <?php if($row_result->Category==$row['Id']){echo 'selected="selected"';}?>><?php echo $row['Title'];?></option>
 <?php }?>
 </select>
 </div>
@@ -443,8 +434,8 @@ while ($row = $result->fetch_assoc())
   </div>
   
    <div class="form-group">         
-          <input type="checkbox" disabled="disabled"  name="Premium" value="499" id="Premium"  class="chk" onclick="showMe('div1')" <?php if($row_result->Premium=='499'){echo 'checked="checked"';}?> />
-          <label for="Premium">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+          <input type="checkbox" disabled="disabled"  name="Premium" value="99" id="Premium"  class="chk" onclick="showMe('div1')" <?php if($row_result->Premium=='99'){echo 'checked="checked"';}?> />
+          <label for="Premium">Upgrade to premium for maximum impact with a banner ad display - for only $99 a month.</label>
 	</div>
     
          
@@ -476,21 +467,12 @@ return confirm("Are you sure you want to delete this Banner?");
 <select name="Category2" class="form-control">
     <option value="">Please select</option>
     <?php
-    $query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" ORDER By Title ASC';
+    $query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" AND `Status`="1" ORDER By Title ASC';
     $result = $db->query($query);
     while ($row = $result->fetch_assoc()) 
     {	
     ?>
-        <optgroup label="<?php echo $row['Title'];?>">
-        <?php 
-        $query2 = 'SELECT * FROM `sub-categories` where `Cid`="'.$row['Id'].'"';
-        $result2 = $db->query($query2);
-        while ($row2 = $result2->fetch_assoc()) 
-        {
-        ?>
-        <option value="<?php echo $row2['Id'];?>" <?php if($row_result->Category2==$row2['Id']){echo 'selected="selected"';}?>><?php echo $row2['Title'];?></option>
-        <?php }?>
-        </optgroup>
+        <option value="<?php echo $row['Id'];?>" <?php if($row_result->Category2==$row['Id']){echo 'selected="selected"';}?>><?php echo $row['Title'];?></option>
     <?php }?>
 </select>
           </div>
@@ -501,8 +483,8 @@ return confirm("Are you sure you want to delete this Banner?");
       </div>
       
          <div class="form-group">         
-          <input type="checkbox" disabled="disabled"  name="Premium2" value="499" id="Premium2" class="chk" onclick="showMe('div2')" <?php if($row_result->Premium2=='499'){echo 'checked="checked"';}?> />
-          <label for="Premium2">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+          <input type="checkbox" disabled="disabled"  name="Premium2" value="99" id="Premium2" class="chk" onclick="showMe('div2')" <?php if($row_result->Premium2=='99'){echo 'checked="checked"';}?> />
+          <label for="Premium2">Upgrade to premium for maximum impact with a banner ad display - for only $99 a month.</label>
         </div>
         
           <div id="div2" style="display:none" class="upload_div">
@@ -513,7 +495,7 @@ return confirm("Are you sure you want to delete this Banner?");
             <em> Banner size should be exactly 632 X 174*</em>
 	
 	<?php if($row_result->Banner2!=""){?>
-    <br />
+    <br 
 <a href="../images/Banner/<?php echo $row_result->Banner2;?>" target="_blank">
 <img src="../images/Banner/<?php echo $row_result->Banner2;?>" width="100" /></a>
     <a href='edit-seasonal?i=<?php echo $_GET['i'];?>&n=<?php echo $row_result->Banner2;?>&b=b&Banner=Banner2' onclick='return DeleteBanner();'>Delete</a>
@@ -534,21 +516,12 @@ return confirm("Are you sure you want to delete this Banner?");
 <select name="Category3" class="form-control">
     <option value="">Please select</option>
     <?php
-    $query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" ORDER By Title ASC';
+    $query = 'SELECT * FROM `categories` WHERE  `UseFor`="7" AND `Status`="1" ORDER By Title ASC';
     $result = $db->query($query);
     while ($row = $result->fetch_assoc()) 
     {	
     ?>
-        <optgroup label="<?php echo $row['Title'];?>">
-        <?php 
-        $query2 = 'SELECT * FROM `sub-categories` where `Cid`="'.$row['Id'].'"';
-        $result2 = $db->query($query2);
-        while ($row2 = $result2->fetch_assoc()) 
-        {
-        ?>
-        <option value="<?php echo $row2['Id'];?>" <?php if($row_result->Category3==$row2['Id']){echo 'selected="selected"';}?>><?php echo $row2['Title'];?></option>
-        <?php }?>
-        </optgroup>
+     <option value="<?php echo $row['Id'];?>" <?php if($row_result->Category3==$row['Id']){echo 'selected="selected"';}?>><?php echo $row['Title'];?></option>
     <?php }?>
 </select>
 	</div>
@@ -558,8 +531,8 @@ return confirm("Are you sure you want to delete this Banner?");
        </div>
        
        <div class="form-group"> 
-          <input type="checkbox" disabled="disabled"  name="Premium3" value="499" id="Premium3" class="chk" onclick="showMe('div3')" <?php if($row_result->Premium3=='499'){echo 'checked="checked"';}?>/>
-          <label for="Premium3">Upgrade to premium for maximum impact with a banner ad display - for only $499 a month.</label>
+          <input type="checkbox" disabled="disabled"  name="Premium3" value="99" id="Premium3" class="chk" onclick="showMe('div3')" <?php if($row_result->Premium3=='99'){echo 'checked="checked"';}?>/>
+          <label for="Premium3">Upgrade to premium for maximum impact with a banner ad display - for only $99 a month.</label>
        </div>
          
           <div id="div3" style="display:none" class="upload_div">
@@ -715,7 +688,8 @@ echo "Order Total: ".$PaymentPlan;
       <?php }?>
       
       </form>
-              
+
+      <!-- copying listing feature         -->
 		<form method="post" action="" name="copyform" id="copyform">	 
 			<h2>Copy listing</h2>
 			<div class="form-group">

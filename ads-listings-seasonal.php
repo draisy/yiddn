@@ -3,17 +3,17 @@ $tb_seasonal = 'SELECT * FROM `tb_seasonal` WHERE `Status`="1" AND `Category`="'
 $result = $db->query($tb_seasonal);
 $total  = $result->num_rows;
 if($total > 0){
+  $featured_text = false;
 	while ($data_row = $result->fetch_assoc()) 
 		{
 	$city        = $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data_row['City'].'"');
 	$city_code   = $city->fetch_assoc();			
 	?>		
 				
-<?php if($data1['Id']==$data_row['Category']&& $data_row['Banner']!=""){?>   
-<div>
-
-
- 
+<?php if($data1['Id']==$data_row['Category']&& $data_row['Banner']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?>  
+<div> 
 <a href="<?=$data1['Seo']?>/<?=$data_row['Seo']?>" class="btn btn-default venoboxframe" data-type="iframe" title="<?=$data_row['CompanyName'];?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner'];?>" />
 </a>
@@ -22,7 +22,9 @@ if($total > 0){
 <?php }?>
 
 
-<?php if($data1['Id']==$data_row['Category2'] && $data_row['Banner2']!=""){?>
+<?php if($data1['Id']==$data_row['Category2'] && $data_row['Banner2']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?>
 <div>
 <a href="<?=$data1['Seo']?>/<?=$data_row['Seo']?>" class="btn btn-default venoboxframe" data-type="iframe" title="<?=$data_row['CompanyName'];?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner2'];?>" />
@@ -31,7 +33,9 @@ if($total > 0){
 <br>
 <?php }?>
 
-<?php if($data1['Id']==$data_row['Category3'] && $data_row['Banner3']!=""){?>
+<?php if($data1['Id']==$data_row['Category3'] && $data_row['Banner3']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?>
 <div>
 <a href="<?=$data1['Seo']?>/<?=$data_row['Seo']?>" class="btn btn-default venoboxframe" data-type="iframe" title="<?=$data_row['CompanyName'];?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner3'];?>" />

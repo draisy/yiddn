@@ -132,7 +132,7 @@ $rows = $results->fetch_object();
     <legend><h5>Choose your Ad Type</h5></legend>
   <div class="element-checkbox"  title="Checkboxes" >
 <label>
-<input type="checkbox" value="99" id="large"  name="large" class="chk" onclick="showMe('div1')" <?php if($row_result->large=='99'){echo 'checked="checked"';}?>/><span>Large Top Banner - $99.00 / month (Pinned at top of the  page)</span>
+<input type="checkbox" value="499" id="large"  name="large" class="chk" onclick="showMe('div1')" <?php if($row_result->large=='499'){echo 'checked="checked"';}?>/><span>Large Top Banner - $499.00 / month (Pinned at top of the  page)</span>
 </label>
 
 <div id="div1" style="display:none" class="upload_div">
@@ -166,8 +166,8 @@ return confirm("Are you sure you want to delete this Banner?");
      <span class="clearfix">&nbsp;</span>
 
 <label>
-<input type="checkbox"  value="899" id="small" name="small" class="chk" onclick="showMe('div2')" <?php if($row_result->small=='899'){echo 'checked="checked"';}?> />
-<span>Small Top Banner - $899.00 / month (Pinned at top of the page)</span>
+<input type="checkbox"  value="249" id="small" name="small" class="chk" onclick="showMe('div2')" <?php if($row_result->small=='249'){echo 'checked="checked"';}?> />
+<span>Small Top Banner - $249.00 / month (Pinned at top of the page)</span>
 </label>
 
 <div id="div2" style="display:none" class="upload_div">
@@ -202,8 +202,8 @@ return confirm("Are you sure you want to delete this Banner?");
      <span class="clearfix">&nbsp;</span>
 
 <label>
-<input type="checkbox"  value="249" id="stantard"  name="stantard"   class="chk" onclick="showMe('div3')" <?php if($row_result->stantard=='249'){echo 'checked="checked"';}?>/>
-<span>Standard Ad spot - $249.00 / month</span>
+<input type="checkbox"  value="99" id="stantard"  name="stantard"   class="chk" onclick="showMe('div3')" <?php if($row_result->stantard=='99'){echo 'checked="checked"';}?>/>
+<span>Standard Ad spot - $99.00 / month</span>
 </label>
 
 <div id="div3" style="display:none" class="upload_div">

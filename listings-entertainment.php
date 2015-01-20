@@ -10,9 +10,10 @@ $data2        = $result->fetch_assoc();?>
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="format-detection" content="telephone=no" />
 <title><?=$row_home->Title;?> | Entertainment | <?=$data1['Title']?> | <?=$data2['Title']?></title>
 <meta name="keywords" content="<?=$row_home->Title;?>, Entertainment, <?=$data1['Title']?>, <?=$data2['Title']?>" />
-<meta name="Description" content="<?=$row_home->Title;?>, Entertainment, <?=$data1['Title']?>, <?=$data2['Title']?>" />
+<meta name="Description" content="<?=$row_home->Title;?>,s Entertainment, <?=$data1['Title']?>, <?=$data2['Title']?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
@@ -21,6 +22,16 @@ $data2        = $result->fetch_assoc();?>
 <link rel="stylesheet" href="<?=ADDRESS_SITE?>css/reset.css" type="text/css" media="all" />
 <link href="<?=ADDRESS_SITE?>css/innermedia.css" rel="stylesheet">
 <link rel="stylesheet" href="<?=ADDRESS_SITE?>css/dropdown.css" />
+
+<link rel="stylesheet" href="<?=ADDRESS_SITE?>venobox/venobox.css" type="text/css" media="screen" />
+
+ 
+
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
 
 
 <style type="text/css">
@@ -40,16 +51,8 @@ background: #b25cda;
 }
 </style>
 
- 
-
-
-<!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 <script type="text/javascript" src="<?=ADDRESS_SITE?>js/jquery.min.js"></script>
-
 <!-- Add venobox -->
-<link rel="stylesheet" href="<?=ADDRESS_SITE?>venobox/venobox.css" type="text/css" media="screen" />
 <script type="text/javascript" src="<?=ADDRESS_SITE?>venobox/venobox.min.js"></script>
 
  
@@ -79,6 +82,7 @@ background: #b25cda;
             });
         })
     </script>
+
   </head>
 <body>
 
@@ -94,69 +98,65 @@ background: #b25cda;
 
    
  <!--Navigation -->
-	<?php require_once('inc.navigation.php'); ?>
+  <?php require_once('inc.navigation.php'); ?>
  <!--/Navigation -->
 
        <div class="cl">&nbsp;</div>
 
         
-   	<section id="content-main">
+    <section id="content-main">
     <div class="shell">
     
     <div id="main">
-	<div id='article'>
+  <div id='article'>
         
-    <h2><a href="<?=ADDRESS_SITE?>entertainment">Entertainment</a><span>  | <a href="../<?=$data1['Seo']?>"><?=$data1['Title']?></a> | <?=$data2['Title']?></span></h2>
+    <h2><a href="<?=ADDRESS_SITE?>entetainment">Entertainment</a><span>  | <a href="../<?=$data1['Seo']?>"><?=$data1['Title']?></a> | <?=$data2['Title']?></span></h2>
  
  <br> <br>
 
 <?php
 $count=1;
 $a_count=1;
-$tb_entertainment = 'SELECT * FROM `tb_entertainment` WHERE `Status`="1" AND (`Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'") ORDER BY `CompanyWebsite` ASC';
-$result = $db->query($tb_entertainment);
+$tb_etailer = 'SELECT * FROM `tb_entertainment` WHERE `Status`="1" AND (`Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'") ORDER BY `CompanyWebsite` ASC';
+$result = $db->query($tb_etailer);
 $total  = $result->num_rows;
 if($total > 0){
-	while ($data_row = $result->fetch_assoc()) 
-		{
-			 $acount = $a_count++;	
-		
-	$city        = $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data_row['City'].'"');
-	$city_code   = $city->fetch_assoc();			
-		$counter = $count++;
-			
-				echo '<article id="maincategory-listings" '; if($acount=='9'){echo "style='border:0px;'";$a_count=-2;}echo'>
-						<ul>
-						<li>
-						<a class="btn btn-default venoboxframe" title="'.$data_row['CompanyName'].'" data-type="iframe" href="'.$data2['Seo'].'/'.$data_row['Seo'].'">
-                     		'.$data_row['CompanyWebsite'].' &nbsp; <span>('.$city_code['Country'].')</span>
-                     	</a>
-					     </li>
-					   </ul>
-					</article>';	
-			
-		}
+  while ($data_row = $result->fetch_assoc()) 
+    {
+       $acount = $a_count++;  
+    
+  $city        = $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data_row['City'].'"');
+  $city_code   = $city->fetch_assoc();      
+    $counter = $count++;
+      
+        echo '<article id="maincategory-listings" '; if($acount=='9'){echo "style='border:0px;'";$a_count=-2;}echo'>
+            <ul>
+            <li>
+<a class="btn btn-default venoboxframe" data-gall="gall-video"   title="'.$data_row['CompanyName'].'" 
+data-type="iframe"  href="'.$data2['Seo'].'/'.$data_row['Seo'].'">
+'.$data_row['CompanyWebsite'].' &nbsp; <span>('.$city_code['Country'].')</span>
+</a>
+               </li>
+             </ul>
+          </article>';  
+      
+    }
 }
 ?>
          
          
-  	</div>
-	</div>
+    </div>
+  </div>
     
-   	<div id='sidebar'>
-    <h3>Featured Ads</h3><br>
+    <div id='sidebar'>
+    <!-- <h3>Premium Ad</h3> --><br>
 
-<?php require_once('ads-listings-retailer.php'); ?>
+<?php require_once('ads-listings-entertainment.php'); ?>
 
 
-		<div> 
-    <img src="<?=ADDRESS_SITE?>images/placeholder.jpg" > 
-   </div>
-        <br>
-
-	</div>
-		
-	</div>
+  </div>
+    
+  </div>
     
      
     
@@ -168,7 +168,7 @@ if($total > 0){
  <div class="ad1"> 
   <h2>Your listing is FREE! <a class="add-btn" href="<?php echo ADDRESS_SITE;?>dashboard">Add yours here.</a></h2>
     
-	<h3>Featured Ads</h3>
+  <h3>Featured Ad</h3>
 <?php 
   function randomImage ($array) {
   $total = count($array);
@@ -232,6 +232,5 @@ $dirs = opendir('staticads/jewish-e-tailers/');
 <script src="<?=ADDRESS_SITE?>js/login.js"></script>
 <script src="<?=ADDRESS_SITE?>js/custom.js"></script>
 <!-- Java Script -->
-
 </body>
 </html>

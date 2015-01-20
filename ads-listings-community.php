@@ -3,13 +3,16 @@
 $result = $db->query($tb_local);
 $total  = $result->num_rows;
 if($total > 0){
+  $featured_text = false;
 	while ($data_row = $result->fetch_assoc()) 
 		{
 	$city        = $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data_row['City'].'"');
 	$city_code   = $city->fetch_assoc();			
 	?>		
 				
-<?php if($data2['Id']==$data_row['City']&& $data_row['Banner']!=""){?>   
+<?php if($data2['Id']==$data_row['City']&& $data_row['Banner']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?>  
 <div>
 <a href="<?=$data2['ProvinceSeo']?>/<?=$data_row['Seo']?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner'];?>" />
@@ -19,7 +22,9 @@ if($total > 0){
 <?php }?>
 
 
-<?php if($data2['Id']==$data_row['City2'] && $data_row['Banner2']!=""){?>
+<?php if($data2['Id']==$data_row['City2'] && $data_row['Banner2']!=""){
+   if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?> 
 <div>
 <a href="<?=$data2['ProvinceSeo']?>/<?=$data_row['Seo']?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner2'];?>" />
@@ -28,7 +33,9 @@ if($total > 0){
 <br>
 <?php }?>
 
-<?php if($data2['Id']==$data_row['City3'] && $data_row['Banner3']!=""){?>
+<?php if($data2['Id']==$data_row['City3'] && $data_row['Banner3']!=""){
+  if ($featured_text == false) {echo "<h3>Featured Ads</h3><br/>"; $featured_text = true;};
+?> 
 <div>
 <a href="<?=$data2['ProvinceSeo']?>/<?=$data_row['Seo']?>">
 <img src="<?php echo ADDRESS_SITE;?>images/Banner/<?php echo $data_row['Banner3'];?>" />
@@ -49,7 +56,7 @@ if($total > 0){
   return $array[$call];
   }
 ?>
-<?php
+<?php /*
 $dir = "listingads/local-directory/";
 $images = scandir($dir);
 $i = rand(2, sizeof($images)-1);
@@ -60,10 +67,11 @@ $filename = randomImage1($my_images);
 $key = array_search($filename, $my_images); // $key = 2;
 $ID_Modal="1";
 $dirs = opendir('listingads/local-directory/');
+*/
 ?> 
 
-<?php if($filename !="" && $filename !="listingads/local-directory/Thumbs.db"){?>
-<div>
-<img src="<?php echo $filename;?>" />
-</div>
-<?php }?> 
+<?php //if($filename !="" && $filename !="listingads/local-directory/Thumbs.db"){?>
+<!-- <div>
+<img src="<?php //echo $filename;?>" />
+</div> -->
+<?php //}?> 

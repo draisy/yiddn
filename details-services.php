@@ -62,8 +62,12 @@ margin-top: 0px;
     <tr>
       <td width="16%" data-title="Order ID" style="color:#96257F">Website</td>
       <td width="84%" colspan="4" data-title="Listing Type">
-<?php if($data3['CompanyWebsite']!=""){?>
-<a href="http://<?php echo $data3['CompanyWebsite']; ?>" target="_blank"><?php echo $data3['CompanyWebsite']; ?></a>
+<?php if($data3['CompanyWebsite']!=""){
+  if ($data3['AffiliateWebsite'] != NULL){ ?>
+    <a href="http://<?php echo $data3['AffiliateWebsite']; ?>" target="_blank"><?php echo $data3['CompanyWebsite']; ?></a>
+  <?php } else { ?>
+  <a href="http://<?php echo $data3['CompanyWebsite']; ?>" target="_blank"><?php echo $data3['CompanyWebsite']; ?></a>
+ <?php }?> 
 <?php }?>
        </td>
     </tr>

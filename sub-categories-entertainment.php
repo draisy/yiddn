@@ -53,7 +53,7 @@ $data        = $result->fetch_assoc();
     <div id="main">
 	<div id='article'>
         
-    <h2><a href="<?=ADDRESS_SITE?>entertainment">Entertainment</a>/<span><?=$data['Title']?></span></h2>
+    <h2><a href="<?=ADDRESS_SITE?>entertainment">Entertainment</a><span> | <?=$data['Title']?></span></h2>
  
  
 <?php
@@ -86,11 +86,11 @@ if($total > 0){
     
     
 	<div id='sidebar'>
-    <h3>Premium Ad</h3><br>
+    <!-- <h3>Premium Ad</h3> --><br>
 
-		<div> 
+<!-- 		<div> 
     <img src="<?=ADDRESS_SITE?>images/placeholder.jpg" > 
-   </div>
+   </div> -->
         <br>
 
 	</div>
@@ -107,7 +107,7 @@ if($total > 0){
  <div class="ad1"> 
   <h2>Your listing is FREE! <a class="add-btn" href="<?php echo ADDRESS_SITE;?>dashboard">Add yours here.</a></h2>
     
-	<h3>Premium Ads</h3>
+	<h3>Featured Ad</h3>
 <?php 
   function randomImage ($array) {
   $total = count($array);
