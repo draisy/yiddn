@@ -23,8 +23,7 @@ $data2        = $result->fetch_assoc();?>
 <link href="<?=ADDRESS_SITE?>css/innermedia.css" rel="stylesheet">
 <link rel="stylesheet" href="<?=ADDRESS_SITE?>css/dropdown.css" />
 
-<link rel="stylesheet" href="<?=ADDRESS_SITE?>venobox/venobox.css" type="text/css" media="screen" />
-
+ 
  
 
 <!--[if IE]>
@@ -51,37 +50,7 @@ background: #b25cda;
 }
 </style>
 
-<script type="text/javascript" src="<?=ADDRESS_SITE?>js/jquery.min.js"></script>
-<!-- Add venobox -->
-<script type="text/javascript" src="<?=ADDRESS_SITE?>venobox/venobox.min.js"></script>
-
  
-    <script type="text/javascript">
-         $(document).ready(function(){
-            $('.venobox').venobox({
-                numeratio: false,
-                infinigall: true,
-                border: '20px',
-            });
-            $('.venoboxvid').venobox({
-                bgcolor: '#000'
-            });
-            $('.venoboxframe').venobox({
-                border: '6px'
-            });
-            $('.venoboxinline').venobox({
-                framewidth: '300px',
-                frameheight: 'auto',
-                border: '10px',
-                bgcolor: '#f46f00',
-                titleattr: 'data-title',
-            });
-            $('.venoboxajax').venobox({
-                border: '30px;',
-                frameheight: '220px'
-            });
-        })
-    </script>
 
   </head>
 <body>
@@ -204,33 +173,11 @@ $dirs = opendir('staticads/jewish-e-tailers/');
   <?php require_once('inc.footer.php'); ?>
   <!-- /Footer -->
 
+  
+    <!-- Footer -->
+  <?php require_once('inc.jsfiles.php'); ?>
+  <!-- /Footer -->
 
       
-         
- 
-        
- 
- 
- 
-<!-- Java Script -->      
-<script src="<?=ADDRESS_SITE?>js/liquidmetal.js" type="text/javascript"></script>
-<script src="<?=ADDRESS_SITE?>js/jquery.flexselect.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("select.special-flexselect").flexselect({ hideDropdownOnEmptyInput: true });
-        $("select.flexselect").flexselect();
-        $("input:text:enabled:first").focus();
-        /*$("form").submit(function() {
-          alert($(this).serialize());
-          return false;
-        });*/
-      });
-    </script>   
-<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
-<script src="js/modernizr.js"></script>
-<script src="<?=ADDRESS_SITE?>js/jquery.easing.min.js"></script>
-<script src="<?=ADDRESS_SITE?>js/login.js"></script>
-<script src="<?=ADDRESS_SITE?>js/custom.js"></script>
-<!-- Java Script -->
-</body>
+ </body>
 </html>

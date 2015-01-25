@@ -23,7 +23,7 @@ require_once('search-query.php');
 <meta name="keywords" content="<?=$row_home->Title;?>, Search" />
 <meta name="Description" content="<?=$row_home->Title;?>, Search" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
 <link href="css/inner.css" rel="stylesheet">
@@ -348,7 +348,7 @@ $link = "listings-community-categories/".cleanURL($data2_['CitySeo']).'/'.cleanU
 	</div>
     
    	<div id='sidebar'>
-    <!-- <h3>Premium Ad</h3><br> -->
+    <!-- <h3>Premium Ad</h3> --><br>
 
 <?php require_once('ads-listings-search.php'); ?>
 

@@ -6,7 +6,7 @@ $data1        = $result->fetch_assoc();
 $SubCategories ='SELECT * FROM `sub-categories` WHERE `Status`="1" AND  `UseFor`="2" AND `Seo`="'.$backpath3.'"';
 $result       = $db->query($SubCategories);
 $data2        = $result->fetch_assoc();
-$tb_etailer   = 'SELECT * FROM `tb_etailer` WHERE `Status`="1" AND `Seo` LIKE "%'.str_replace("-", "%", $pathInfo).'%"  AND (`Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'") ORDER BY `CompanyWebsite` ASC';
+$tb_etailer   = 'SELECT * FROM `tb_etailer` WHERE `Status`="1" AND `Seo`="'.$pathInfo.'"  AND (`Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'") ORDER BY `CompanyWebsite` ASC';
 $result       = $db->query($tb_etailer);
 $data3        = $result->fetch_assoc();
 $city     =  $db->query('SELECT * FROM `city` JOIN `country` ON `city`.CountryId=`country`.Id Where `city`.Id="'.$data3['City'].'"');
@@ -16,41 +16,65 @@ $city_code = $city->fetch_assoc();
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="format-detection" content="telephone=no" />
 <title><?=$row_home->Title;?> | Retailers | <?=$data1['Title']?> | <?=$data2['Title']?> | <?=$data3['CompanyName']?></title>
 <meta name="keywords" content="<?=$row_home->Title;?>, Retailers, <?=$data1['Title']?>, <?=$data2['Title']?>, <?=$data3['CompanyName']?>" />
 <meta name="Description" content="<?=$row_home->Title;?>,s Retailers, <?=$data1['Title']?>, <?=$data2['Title']?>, <?=$data3['CompanyName']?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link href="<?=ADDRESS_SITE?>css/inner.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="<?=ADDRESS_SITE?>css/inner.css" rel="stylesheet">
 <link rel="stylesheet" href="<?=ADDRESS_SITE?>css/reset.css" type="text/css" media="all" />
 <link href="<?=ADDRESS_SITE?>css/innermedia.css" rel="stylesheet">
 <link href="<?=ADDRESS_SITE?>css/dashboard.css" rel="stylesheet">
 <link rel="stylesheet" href="<?=ADDRESS_SITE?>css/dropdown.css" />
-<link rel="stylesheet" href="<?=ADDRESS_SITE?>css/tables.css" />
-<style>
- #content-main {
-padding: 0;
-position: relative;
-margin-top: 0px;
-} 
- </style>
+
+
+<link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
 
  
-
   </head>
-<body> 
+<body>
+
+
+
+
+<!--Header -->  
+ <?php require_once('inc.header.php'); ?>
+ <!--/Header -->
+
+
+
+
+   
+ <!--Navigation -->
+	<?php require_once('inc.navigation.php'); ?>
+ <!--/Navigation -->
+
+       <div class="cl">&nbsp;</div>
 
         
    	<section id="content-main">
     <div class="shell">
     
     <div id="main">
-	<div id='article'>
+<div class="shadow" style="width:93%;">
+    
+    
+     
         
-        <!--<h2><?php //echo $data3['CompanyName']; ?></h2>-->
-         
-  <article style=" background:none; margin:0; float:left; width:98%; margin-right:10px;"> 
+    
+
+  <article id="detailpage"> 
+      <h2><?php echo $data3['CompanyName']; ?></h2>
+<br>
+
 <?php if($data3['CompanyLogo']!=""){?>
 <img class="CompanyLogo" src="<?php echo ADDRESS_SITE;?>images/CompanyLogo/<?php echo $data3['CompanyLogo']; ?>" width="200" />
 <?php }else{?>
@@ -157,6 +181,13 @@ margin-top: 0px;
         
        </table>          </article>
          
+	</div>    
+  
+        
+   
+         
+   
+         
 	</div>
 	</div>
     
@@ -170,35 +201,24 @@ margin-top: 0px;
     
     
     </section>
- 
-    <div class="cl">&nbsp;</div>
+<div class="cl">&nbsp;</div>
 
-    
-    
- 
- 
+
   
-<!-- Java Script -->      
- <script src="<?=ADDRESS_SITE?>js/liquidmetal.js" type="text/javascript"></script>
-<script src="<?=ADDRESS_SITE?>js/jquery.flexselect.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("select.special-flexselect").flexselect({ hideDropdownOnEmptyInput: true });
-        $("select.flexselect").flexselect();
-        $("input:text:enabled:first").focus();
-        /*$("form").submit(function() {
-          alert($(this).serialize());
-          return false;
-        });*/
-      });
-    </script>   
-<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
-<script src="js/modernizr.js"></script>
-<script src="<?=ADDRESS_SITE?>js/jquery.easing.min.js"></script>
-<script src="<?=ADDRESS_SITE?>js/login.js"></script>
-<script src="<?=ADDRESS_SITE?>js/custom.js"></script>
-<!-- Java Script -->
+   
+ 
+    
+   
+    <!-- Footer -->
+  <?php require_once('inc.footer.php'); ?>
+  <!-- /Footer -->
 
+
+      
+         
+    <!-- Footer -->
+  <?php require_once('inc.jsfiles.php'); ?>
+  <!-- /Footer -->
 
 
 </body>

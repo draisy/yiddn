@@ -45,7 +45,7 @@ require_once('user-check.php');
     <div class="shell">
     
     <div id="main">
-	<div id='article' style="width:100%;">
+	<div id='article' style="width:92%;">
 <?php
 $query = "select * from `account` where `Id`= '".$_SESSION['Yiddn_login_Id']."' ";
 $result = $db->query($query);
@@ -191,39 +191,13 @@ $PaymentPlan ="Free";
 <!-- /Footer -->
 
 
-      
-         
+          
  
         
  
- 
- 
-  
-<!-- Java Script -->       
-<!-- Java Script -->      
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-    <script src="js/liquidmetal.js" type="text/javascript"></script>
-    <script src="js/jquery.flexselect.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("select.special-flexselect").flexselect({ hideDropdownOnEmptyInput: true });
-        $("select.flexselect").flexselect();
-        $("input:text:enabled:first").focus();
-       /*$("form").submit(function() {
-          alert($(this).serialize());
-          return false;
-        });*/
-      });
-</script>   
-<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
-<script src="js/modernizr.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/login.js"></script>
-<script src="js/custom.js"></script>
-  <!-- Java Script -->
-
-
+ <!-- Java Script -->      
+<?php require_once('inc.jsfiles.php'); ?>
+ <!-- Java Script -->
 
 </body>
 </html>

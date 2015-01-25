@@ -23,8 +23,9 @@ FROM `tb_etailer`
 WHERE  `Status`= '1' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 
 UNION
@@ -36,8 +37,9 @@ FROM `tb_torah_resources`
 WHERE  `Status`= '1' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 
 UNION
@@ -48,8 +50,9 @@ FROM `tb_local`
 WHERE  `Status`= '1' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 ";	
 
@@ -247,7 +250,10 @@ $query_categories      = 'SELECT * FROM `sub-categories` WHERE `Status`="1" AND 
 
 if(isset($_GET['president']) && $_GET['president']!="" && isset($_GET['keywords']) && $_GET['keywords']!="" ){
     
-	$keywordstring ='';
+	$keywordstring = '';
+	$keywordstring = $_GET['keywords'];
+	//$keywordstring = addslashes($keywordstring);
+	$keywordstring = str_replace(" ","%",str_replace("'","%",$keywordstring));
 	$services_get_city='';
 	$Category    ='';
 	$record_id   ='';
@@ -274,8 +280,9 @@ FROM `tb_etailer`
 WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 
 UNION
@@ -287,8 +294,9 @@ FROM `tb_torah_resources`
 WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 
 UNION
@@ -299,8 +307,9 @@ FROM `tb_local`
 WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
 	(
 	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '%". $keywordstring ."%' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'
+	 `ShortDescription` LIKE '". $keywordstring ."' OR 
+	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
+	 `Description` LIKE '". $keywordstring ."'  
 	 )
 ";	
 	

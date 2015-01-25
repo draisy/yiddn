@@ -1,21 +1,25 @@
+ 
 <header id="header">   
  <div class="shell">
-  <select id="mobilemenu" size="1"  name="mobilemenu" onchange="location = this.options[this.selectedIndex].value;">
-            <option selected>Navigation</option>
-    <option value="retailer">Retailers</option>  
-         <option value="torah-and-resources">Torah Resources</option>
-         <option value="services">Services</option>
-         <option value="community">Community</option>
-         <option value="entertainment">Entertainment</option>
-         <option value="special-offers">Special Offers</a></option>
-</select>
-<script type="text/javascript">
- var urlmenu = document.getElementById( 'mobilemenu' );
- urlmenu.onchange = function() {
-      window.location.replace( this.options[ this.selectedIndex ].value );
- };
-</script>
-            </select>
+ <nav class="navbar-mini-menu">
+        <div class="menu-select">
+          <span class="menu-actual">
+            <strong>Navigation</strong>
+          </span>
+          <span class="btn-select">
+            
+          </span>
+        </div>
+        <ul class="mini-menu-options">
+<li><a href="retailer">Retailers</a></li>  
+         <li><a href="torah-and-resources">Torah Resources</a></li>
+         <li><a href="entertainment">Entertainment</a></li>
+         <li><a href="community">Community</a></li>
+         <li><a href="seasonal">Seasonal</a></li>
+         <li><a href="special-offers">Special Offers</a></li>
+          
+        </ul>  
+      </nav>
  
  
  

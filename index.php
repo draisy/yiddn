@@ -14,6 +14,8 @@
 <link href="css/media.css" rel="stylesheet">
 <link href="css/flexslect.css" rel="stylesheet">
  <link rel="stylesheet" href="css/dropdown.css" />
+ <link rel="stylesheet" href="css/mobilemenu.css" type="text/css" media="all">
+
 <script type="text/javascript">
 function CreateBookmarkLink(){
     var title = document.title;
@@ -50,22 +52,30 @@ function CreateBookmarkLink(){
  <header id="header">  
   
  <div class="shell">
-  <select id="mobilemenu" size="1"  name="mobilemenu">
-            <option selected>Navigation</option>
-    <option value="retailer">Retailers</option>  
-         <option value="torah-and-resources">Torah Resources</option>
-         <option value="services">Services</option>
-         <option value="community">Community</option>
-         <option value="entertainment">Entertainment</option>
-         <option value="special-offers">Special Offers</a></option>
-</select>
-<script type="text/javascript">
- var urlmenu = document.getElementById( 'mobilemenu' );
- urlmenu.onchange = function() {
-      window.location.replace( this.options[ this.selectedIndex ].value );
- };
-</script>
-            </select>
+ 
+ <nav class="navbar-mini-menu">
+        <div class="menu-select">
+          <span class="menu-actual">
+            Navigation
+          </span>
+          <span class="btn-select">
+            
+          </span>
+        </div>
+        <ul class="mini-menu-options">
+         
+    	<li><a href="retailer">Retailers</a></li>  
+         <li><a href="torah-and-resources">Torah Resources</a></li>
+         <li><a href="entertainment">Entertainment</a></li>
+         <li><a href="community">Community</a></li>
+         <li><a href="seasonal">Seasonal</a></li>
+         <li><a href="special-offers">Special Offers</a></li>
+          
+        </ul>  
+      </nav>
+  
+ 
+         
  
    
  
@@ -114,7 +124,7 @@ function CreateBookmarkLink(){
   <form class="searchform" method="get"   action="search">
 <input class="searchfield" type="text" placeholder='What are you looking for?' name="keywords" /> IN
 
-<select id="yiddnsearch"  class="flexselect searchfield2" data-placeholder="All Locations" tabindex="2" name="president"  tabindex="2"  >
+<select id="yiddnsearch"  class="flexselect searchfield2" data-placeholder="All Locations" tabindex="2" name="president"  tabindex="2"  > 
 
             <option value=""></option>
 
@@ -135,7 +145,7 @@ if($total > 0){
 		}
 }
 ?>
-</select>
+</select> 
  
   
 <input class="searcbutton" type="submit" value="&nbsp;" name="Go" id="Go"/>
@@ -390,7 +400,7 @@ $rows = $num->fetch_assoc();
  
   
 <!-- Java Script -->     
-
+  
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/liquidmetal.js" type="text/javascript"></script>
 <script src="js/jquery.flexselect.js" type="text/javascript"></script>
