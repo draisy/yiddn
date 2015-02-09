@@ -6,15 +6,19 @@
 	require_once('anet_php_sdk/AuthorizeNet.php'); 
 	require_once('include/PHPMailerAutoload.php');
 
-
 if(isset($_POST['step4'])){
 
-    define("AUTHORIZENET_API_LOGIN_ID", "7D4Jvj8Y");
-    define("AUTHORIZENET_TRANSACTION_KEY", "3Y54Yx4T259QtUfb");
-    define("AUTHORIZENET_SANDBOX", false);
+/*    define("AUTHORIZENET_API_LOGIN_ID", "7D4Jvj8Y");
+    define("AUTHORIZENET_TRANSACTION_KEY", "3Y54Yx4T259QtUfb");*/
+	define("AUTHORIZENET_API_LOGIN_ID", "7D4Jvj8Y");
+	define("AUTHORIZENET_TRANSACTION_KEY", "33t5x2bAcDwe9Z9a");
+	define("AUTHORIZENET_SANDBOX", false);
+	date_default_timezone_set('Etc/UTC');
     $sale = new AuthorizeNetAIM;
 	
-	$OrderAmount = $_POST['AmountCharged']; 
+	$OrderAmount = str_replace(array(','), '' , number_format($_POST['AmountCharged'],2));
+	
+	//$OrderAmount = $_POST['AmountCharged']; 
 	$CreditCard	 = $_POST['CreditCard'];
 	$cardNumber  = str_replace(' ', '',$CreditCard);
 	$exp_date    = $_POST['ExpMon']."/".$_POST['ExpYear'];
@@ -25,12 +29,12 @@ if(isset($_POST['step4'])){
 	$Description = $_POST['Description'];
 	$Address     = $_POST['Address'];
 
-	$sale->amount = $OrderAmount; 
+	$sale->amount   = $OrderAmount; 
     $sale->card_num = $cardNumber ;
     $sale->exp_date = $exp_date; 
     $response = $sale->authorizeAndCapture();
 	
-	if ($response->approved){
+	if ($response->approved) {
 		
 		   if(!empty($_POST['PaymentPlan'])) {
 				$PaymentPlan = $_POST['PaymentPlan'];
@@ -358,7 +362,7 @@ $body .='</td>
 		}
   } 
 	}else{  
-			$_SESSION['errors']  = $response->error_message.'&nbsp;'.$response->response_reason_text;
+			$_SESSION['errors']  = $response->error_message.'&nbsp;'.$response->response_reason_text."Abc";
             header("Location:jewish-etailers-step4");
 	}	
 }

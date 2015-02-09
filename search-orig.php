@@ -8,7 +8,7 @@ $province ='SELECT * FROM `province` WHERE `Status`="1" AND `ProvinceSeo`="'.$pa
 $result     = $db->query($province);
 $data2        = $result->fetch_assoc();
 $whereCity = 'AND `City`='.$data1['Id'];
-$whereCategoryCity = 'AND (`tb_etailer`.City="'.$data1['Id'].'" OR `tb_local`.City="'.$data1['Id'].'" OR `tb_torah_resources`.City="'.$data1['Id'].'" OR `tb_entertainment`.City="'.$data1['Id'].'" OR `tb_services`.City="'.$data1['Id'].'")';
+$whereCategoryCity = 'AND (`tb_etailer`.City="'.$data1['Id'].'" OR `tb_local`.City="'.$data1['Id'].'" OR `tb_torah_resources`.City="'.$data1['Id'].'")';
 }else{
 $whereCity ='';
 $whereCategoryCity = '';
@@ -142,7 +142,6 @@ $linkarray = array();
 	if($total_results>0){
 	$row_categories = $result_categories->fetch_assoc();
 
-
 $query_web ="
 SELECT `tb_etailer`.Category,`sub-categories`.Id,`sub-categories`.Title , 'etailer' AS `tablename` 
 
@@ -161,26 +160,6 @@ FROM `tb_torah_resources`
 JOIN `sub-categories` ON `tb_torah_resources`.Category=`sub-categories`.Id 
 
 WHERE `tb_torah_resources`.Status='1' AND `tb_torah_resources`.Id_torah_resources IN (".$record_id_torah."0) 
-
-UNION
-
-SELECT `tb_entertainment`.Category,`sub-categories`.Id,`sub-categories`.Title, 'entertainment' AS `tablename` 
-
-FROM `tb_entertainment`
-
-JOIN `sub-categories` ON `tb_entertainment`.Category=`sub-categories`.Id 
-
-WHERE `tb_entertainment`.Status='1' AND `tb_entertainment`.Id_Entertainment IN (".$record_id_entertainment."0) 
-
-UNION
-
-SELECT `tb_services`.Category,`sub-categories`.Id,`sub-categories`.Title, 'services' AS `tablename` 
-
-FROM `tb_services`
-
-JOIN `sub-categories` ON `tb_services`.Category=`sub-categories`.Id 
-
-WHERE `tb_services`.Status='1' AND `tb_services`.Id_Services IN (".$record_id_services."0) 
 
 UNION
 
@@ -256,18 +235,6 @@ WHERE `Status`='1' AND `Id_torah_resources` IN (".$record_id_torah."0) AND (`Cat
 
 UNION
 
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category ,'entertainment' as tablename
-FROM `tb_entertainment` 
-WHERE `Status`='1' AND `Id_Entertainment` IN (".$record_id_entertainment."0) AND (`Category`='".$subcategories ['Id']."')
-
-UNION
-
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category ,'services' as tablename
-FROM `tb_services` 
-WHERE `Status`='1' AND `Id_Services` IN (".$record_id_services."0) AND (`Category`='".$subcategories ['Id']."')
-
-UNION
-
 SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category1 ,'local' as tablename
 FROM `tb_local` 
 WHERE `Status`='1' AND `Id_Local` IN (".$record_id_local."0) AND (`Category1`='".$subcategories ['Id']."')
@@ -332,28 +299,6 @@ $result_       = $db->query($categories_);
 $data1_        = $result_->fetch_assoc();
 				
 $link = "torah-resources/".cleanURL($data1_['Seo']).'/'.cleanURL($data2_['Seo']).'/'.cleanURL($row_web_['Seo']);
-}
-if($OrderType == "Entertainment"){
-$SubCategories_ ='SELECT * FROM `sub-categories` WHERE `Status`="1" AND  `UseFor`="5" AND `Id`="'.$row_web_['Category'].'"';
-$result_       = $db->query($SubCategories_);
-$data2_        = $result_->fetch_assoc();
-
-$categories_ = 'SELECT * FROM `categories` WHERE `Status`="1" AND  `UseFor`="5" AND  `Id`="'.$data2_['Cid'].'"';
-$result_       = $db->query($categories_);
-$data1_        = $result_->fetch_assoc();
-        
-$link = "entertainment/".cleanURL($data1_['Seo']).'/'.cleanURL($data2_['Seo']).'/'.cleanURL($row_web_['Seo']);
-}
-if($OrderType == "Services"){
-$SubCategories_ ='SELECT * FROM `sub-categories` WHERE `Status`="1" AND  `UseFor`="6" AND `Id`="'.$row_web_['Category'].'"';
-$result_       = $db->query($SubCategories_);
-$data2_        = $result_->fetch_assoc();
-
-$categories_ = 'SELECT * FROM `categories` WHERE `Status`="1" AND  `UseFor`="6" AND  `Id`="'.$data2_['Cid'].'"';
-$result_       = $db->query($categories_);
-$data1_        = $result_->fetch_assoc();
-        
-$link = "services/".cleanURL($data1_['Seo']).'/'.cleanURL($data2_['Seo']).'/'.cleanURL($row_web_['Seo']);
 }
 if($OrderType == "Local Directory"){
 $SubCategories_ ='SELECT * FROM `sub-categories` WHERE `Status`="1" AND  `UseFor`="4" AND `Id`="'.$row_web_['Category'].'"';

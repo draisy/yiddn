@@ -90,6 +90,9 @@ function updateTotal() {
 	PaymentPlan			= document.getElementById('PaymentPlan').value;
 	CouponDiscount      = document.getElementById('CouponDiscount').value;
 	CouponDiscountAmount= document.getElementById('CouponDiscountAmount').value;
+	AmountCharged		= document.getElementById('AmountCharged').value;
+	
+
 	if(Coupon==""){
 	 CouponCode="NA";
 	 CouponDiscountAmount="0.00";
@@ -100,19 +103,30 @@ function updateTotal() {
 	/** ----- PaymentPlan 10% -----**/
 	if(PaymentPlan==10){
 	OrderAmount 		 = total* 3;
-	CouponDiscountAmount = OrderAmount /100 * CouponDiscountAmount;
+   	CouponDiscountAmount = OrderAmount/100*CouponDiscountAmount;
 			if(Coupon==""){
 			DiscountAmount  	 = OrderAmount/100*10;
 			CouDiscountAmount  	 = "0.00";	
 			AmountCharged 		 = OrderAmount - DiscountAmount;
+			get_OrderAmount      = OrderAmount - DiscountAmount;
 			}else{
 					if(CouponDiscountAmount!=""){
-				CouDiscountAmount  	 = OrderAmount/100*CouponDiscount;	
+
 				DiscountAmount  	 = OrderAmount/100*10;
 				TotalDis 			 = DiscountAmount + CouDiscountAmount;
-				AmountCharged 		 = OrderAmount - TotalDis;
+				AmountCharged 		 = OrderAmount - DiscountAmount;
+				get_OrderAmount 	 = OrderAmount - DiscountAmount;
+				CouponDiscountAmount = AmountCharged/100*CouponDiscount;	
+				AmountCharged 		 = AmountCharged - CouponDiscountAmount;
+				//AmountCharged 		 = OrderAmount - TotalDis;
+
 					}
 			}
+
+		if(AmountCharged.format(2)=="-0.00"){
+		AmountCharged = 0.00;
+		}
+
 	$('#TotalCost').val("Order Total: $" + AmountCharged.format(2) + " every 3 months");
 	}
 	/** ----- PaymentPlan 20% -----**/
@@ -123,20 +137,24 @@ function updateTotal() {
 			DiscountAmount  	 = OrderAmount/100*20;
 			CouDiscountAmount  	 = "0.00";	
 			AmountCharged 		 = OrderAmount - DiscountAmount;
+			get_OrderAmount      = OrderAmount - DiscountAmount;
 			}else{
 					if(CouponDiscountAmount!=""){
-				CouDiscountAmount  	 = OrderAmount/100*CouponDiscount;	
 				DiscountAmount  	 = OrderAmount/100*20;
 				TotalDis 			 = DiscountAmount + CouDiscountAmount;
-				AmountCharged 		 = OrderAmount - TotalDis;
+				AmountCharged 		 = OrderAmount - DiscountAmount;
+				get_OrderAmount 	 = OrderAmount - DiscountAmount;
+				CouponDiscountAmount = AmountCharged/100*CouponDiscount;	
+				AmountCharged 		 = AmountCharged - CouponDiscountAmount;
 					}
 			}
 	$('#TotalCost').val("Order Total: $" + AmountCharged.format(2) + " every 6 months");
 	}
-		
+	/** ----- PaymentPlan  -----**/
 	/** ----- PaymentPlan RECUR% -----**/
 	else if(PaymentPlan=="RECUR"){
 	OrderAmount 		 = total* 1;
+	get_OrderAmount		 = total* 1;
 	CouponDiscountAmount = OrderAmount /100 * CouponDiscountAmount;
 			if(Coupon==""){
 			DiscountAmount  	 = 0;
@@ -145,18 +163,17 @@ function updateTotal() {
 			}else{
 					if(CouponDiscountAmount!=""){
 				CouDiscountAmount  	 = OrderAmount/100*CouponDiscount;	
-				DiscountAmount  	 = OrderAmount/100*20;
+				DiscountAmount  	 = 0;
 				TotalDis 			 = DiscountAmount + CouDiscountAmount;
 				AmountCharged 		 = OrderAmount - TotalDis;
 					}
 			}
 	$('#TotalCost').val("Order Total: $" + AmountCharged.format(2) + " per month");
 	}
-	
-	
 	/** ----- PaymentPlan RECUR% -----**/
 	else if(PaymentPlan=="ONETIME"){
 	OrderAmount 		 = total* 1;
+	get_OrderAmount		 = total* 1;
 	CouponDiscountAmount = OrderAmount /100 * CouponDiscountAmount;
 			if(Coupon==""){
 			DiscountAmount  	 = 0;
@@ -165,19 +182,14 @@ function updateTotal() {
 			}else{
 					if(CouponDiscountAmount!=""){
 				CouDiscountAmount  	 = OrderAmount/100*CouponDiscount;	
-				DiscountAmount  	 = OrderAmount/100*20;
+				DiscountAmount  	 = 0;
 				TotalDis 			 = DiscountAmount + CouDiscountAmount;
 				AmountCharged 		 = OrderAmount - TotalDis;
 					}
 			}
 	$('#TotalCost').val("Order Total: $" + AmountCharged.format(2) + " One time");
 	}
-	
-	
 	/** ----- PaymentPlan  -----**/
-	
-	
-	
 	/*else{
 		OrderAmount =total;
 		DiscountAmount ="0.00";
@@ -185,8 +197,6 @@ function updateTotal() {
 		
 		$('#TotalCost').val("Order Total: $" + OrderAmount.toFixed(2) + " per month");
 	}*/
-	
-	 
 document.getElementById('OrderAmount').value=OrderAmount.format(2);
 document.getElementById('CouponDiscountAmount').value=CouponDiscountAmount.format(2);
 document.getElementById('DiscountAmount').value=DiscountAmount.format(2);
@@ -447,34 +457,10 @@ $row = $result->fetch_assoc();
          
  
         
- 
- 
- 
   
-<!-- Java Script -->       
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
-<script src="js/liquidmetal.js" type="text/javascript"></script>
-<script src="js/jquery.flexselect.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $("select.special-flexselect").flexselect({ hideDropdownOnEmptyInput: true });
-        $("select.flexselect").flexselect();
-        $("input:text:enabled:first").focus();
-       /*$("form").submit(function() {
-          alert($(this).serialize());
-          return false;
-        });*/
-      });
-</script>   
-<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
-<script src="js/modernizr.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/login.js"></script>
-<script src="js/custom.js"></script>
-  <!-- Java Script -->
-
-
+  <!-- Java Script -->      
+<?php require_once('inc.jsfiles.php'); ?>
+ <!-- Java Script -->
 
 </body>
 </html>

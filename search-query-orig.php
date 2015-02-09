@@ -1,5 +1,5 @@
 <?php
-$where = " `Status`='1' AND `UseFor` IN ('2','3','4','5','6')";
+$where = " `Status`='1' AND `UseFor` IN ('2','3','4')";
 
 if(isset($_GET['keywords']) && $_GET['keywords']!='' && $_GET['president'] =="")
 	{
@@ -16,8 +16,6 @@ if(isset($_GET['keywords']) && $_GET['keywords']!='' && $_GET['president'] =="")
 	$record_id_etailer = '';
 	$record_id_torah   = '';
 	$record_id_local   = '';
-	$record_id_entertainment = '';
-	$record_id_services = '';
 				
 	$query_Keywords = "SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
 	Id_Etailer AS ID,'etailer' as tablename
@@ -56,32 +54,6 @@ WHERE  `Status`= '1' AND
 	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
 	 `Description` LIKE '". $keywordstring ."'  
 	 )
-
-UNION
-
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Entertainment AS ID ,'entertainment' as tablename
-FROM `tb_entertainment` 
-WHERE  `Status`= '1' AND
-	(
-	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '". $keywordstring ."' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
-	 `Description` LIKE '". $keywordstring ."'  
-	 )
-
-UNION
-
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Services AS ID ,'services' as tablename
-FROM `tb_services` 
-WHERE  `Status`= '1' AND
-	(
-	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '". $keywordstring ."' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
-	 `Description` LIKE '". $keywordstring ."'  
-	 )
 ";	
 
 	
@@ -96,14 +68,6 @@ if($row_Keywords['tablename'] == "etailer"){
 
 if($row_Keywords['tablename'] == "torah"){
 	$record_id_torah   .= $row_Keywords['ID'].",";
-}
-
-if($row_Keywords['tablename'] == "entertainment"){
-	$record_id_entertainment   .= $row_Keywords['ID'].",";
-}
-
-if($row_Keywords['tablename'] == "services"){
-	$record_id_services   .= $row_Keywords['ID'].",";
 }
 
 if($row_Keywords['tablename'] == "local"){
@@ -174,8 +138,6 @@ if(isset($_GET['president']) && $_GET['president']!='' && $_GET['keywords'] ==""
 	$record_id_etailer = '';
 	$record_id_torah   = '';
 	$record_id_local   = '';
-	$record_id_entertainment = '';
-	$record_id_services = '';
 	
 	$stringToArray = explode(",",$_GET['president']);
 	
@@ -203,23 +165,6 @@ WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."'
 
 UNION
 
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Entertainment AS ID,'entertainment' as tablename
-
-FROM `tb_entertainment` 
-WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."'
-
-UNION
-
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Services AS ID,'services' as tablename
-
-FROM `tb_services` 
-WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."'
-
-
-UNION
-
 SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category1,
 Id_Local AS ID ,'local' as tablename
 FROM `tb_local` 
@@ -242,14 +187,6 @@ if($row_services_get_city['tablename'] == "etailer"){
 
 if($row_services_get_city['tablename'] == "torah"){
 	$record_id_torah   .= $row_services_get_city['ID'].",";
-}
-
-if($row_services_get_city['tablename'] == "entertainment"){
-	$record_id_entertainment   .= $row_services_get_city['ID'].",";
-}
-
-if($row_services_get_city['tablename'] == "services"){
-	$record_id_services   .= $row_services_get_city['ID'].",";
 }
 
 if($row_services_get_city['tablename'] == "local"){
@@ -325,8 +262,6 @@ if(isset($_GET['president']) && $_GET['president']!="" && isset($_GET['keywords'
 	$record_id_etailer = '';
 	$record_id_torah   = '';
 	$record_id_local   = '';
-	$record_id_entertainment = '';
-	$record_id_services = '';
 	
 	
 	$stringToArray = explode(",",$_GET['president']);
@@ -366,34 +301,6 @@ WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
 
 UNION
 
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Entertainment AS ID,'entertainment' as tablename
-
-FROM `tb_entertainment` 
-WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
-	(
-	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '". $keywordstring ."' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
-	 `Description` LIKE '". $keywordstring ."'  
-	 )
-
-UNION
-
-SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category,
-Id_Services AS ID,'services' as tablename
-
-FROM `tb_services` 
-WHERE  `Status`= '1' AND `City` = '".$row_city_get['Id']."' AND
-	(
-	 `CompanyName` LIKE '%". $keywordstring ."%' OR 
-	 `ShortDescription` LIKE '". $keywordstring ."' OR 
-	 `CompanyKeywords` LIKE '%". $keywordstring ."%'  OR
-	 `Description` LIKE '". $keywordstring ."'  
-	 )
-
-UNION
-
 SELECT CompanyName, OrderType, CompanyWebsite, City, Seo, Category1 AS Category,
 Id_Local AS ID ,'local' as tablename
 FROM `tb_local` 
@@ -421,14 +328,6 @@ if($row_services_get_city['tablename'] == "etailer"){
 
 if($row_services_get_city['tablename'] == "torah"){
   $record_id_torah   .= $row_services_get_city['ID'].",";
-}
-
-if($row_services_get_city['tablename'] == "entertainment"){
-  $record_id_entertainment   .= $row_services_get_city['ID'].",";
-}
-
-if($row_services_get_city['tablename'] == "services"){
-  $record_id_services   .= $row_services_get_city['ID'].",";
 }
 
 if($row_services_get_city['tablename'] == "local"){

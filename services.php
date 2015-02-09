@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 
-<title><?=$row_home->Title;?> | Services</title>
+<title><?=$row_home->Title;?> | Everything Else</title>
    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300' rel='stylesheet' type='text/css'>
@@ -49,7 +49,7 @@
     <div id="main">
 	<div id='article'>
         
-    <h2>Services</h2>
+    <h2>Everything Else</h2>
     <p style="font-style:italic;">Yiddn.com’s exclusive listing of non-Jewish items and services.</p>
  	<br>
 <?php
@@ -89,7 +89,7 @@ echo '</div>';
     
     
     
-		<?php require_once('inc.local.php'); ?>
+		<?php require_once('inc.retailers.php'); ?>
 
 		
 	</div>

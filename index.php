@@ -377,9 +377,9 @@ $rows = $num->fetch_assoc();
  		</a> 
         
         
-          <a href="#" title="Check out all the Yiddn resources in our listings!" class="masterTooltip"> 
+          <a href="seasonal" title="Check out all the Yiddn resources in our listings!" class="masterTooltip"> 
         <article id="col-5">
-        <figure><img src="images/in-the-catskills.png"></figure> 
+        <figure><img src="images/seasonal-listings.png"></figure> 
         </article>
  		</a> 
         

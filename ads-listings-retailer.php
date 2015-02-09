@@ -1,6 +1,6 @@
 <?php
-$tb_etailer = 'SELECT * FROM `tb_etailer` WHERE `Status`="1" AND `Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'" ORDER BY `CompanyWebsite` ASC';
-$result = $db->query($tb_etailer);
+$tb_etailer = 'SELECT * FROM `tb_etailer` WHERE `Status`="1" AND `Category`="'.$data2['Id'].'" OR `Category2`="'.$data2['Id'].'"  OR `Category3`="'.$data2['Id'].'" ORDER BY rand()';
+$result = $db->query($tb_etailer); 
 $total  = $result->num_rows;
 if($total > 0){
   $featured_text = false;

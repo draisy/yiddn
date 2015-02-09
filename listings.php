@@ -62,8 +62,8 @@
         
          <article id="center-col">
     	<h2><a href="seasonal">Seasonal</a></h2>
-        <p>...seasonal tagline goes here...Browse our listings of services and products that are not Jewish in nature, but that are offered by carefully filtered vendors.</p>
-        <figure><a href="seasonal"><img src="images/others-cat-image.png"></a></figure> 
+        <p>Yomim Tovim and seasonal events - Yiddn has it all! Browse our listings of resources and products for all your Purim & Pesach needs.</p>
+        <figure><a href="seasonal"><img src="images/seasonal-holidays.png"></a></figure> 
         </article>
         
         

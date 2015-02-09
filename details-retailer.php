@@ -37,7 +37,7 @@ $city_code = $city->fetch_assoc();
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-
+ 
  
   </head>
 <body>
@@ -57,16 +57,19 @@ $city_code = $city->fetch_assoc();
 	<?php require_once('inc.navigation.php'); ?>
  <!--/Navigation -->
 
-       <div class="cl">&nbsp;</div>
+  <div class="cl">&nbsp;</div>
 
         
-   	<section id="content-main">
+    	<section id="content-main" class="contentdetail"> 
     <div class="shell">
     
     <div id="main">
-<div class="shadow" style="width:93%;">
+<div style="width:93%; margin:0 auto;" >
     
-    
+     
+    <a href="newsite/retailer/"><div class="vbox-close">X</div></a>
+    <div class="vbox-next" style="display: block;">next</div>
+    <div class="vbox-prev" style="display: block;">prev</div>
      
         
     

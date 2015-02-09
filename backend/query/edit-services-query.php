@@ -10,6 +10,7 @@ $CompanyName 		    = '';
 $CompanyAddress 		= '';
 $CompanyEmail   	    = '';
 $CompanyWebsite    		= '';
+$AffiliateWebsite    	= '';
 $CompanyLogo    		= '';
 $ShortDescription    	= '';
 $Description 			= '';
@@ -71,6 +72,11 @@ $DateAdded 			= date("Y-m-d H:i:s");
 			$CompanyWebsite = $_POST['CompanyWebsite'];
 		}else{
 	   		$errors[] ="* Company Website is required field.";
+		}
+		if(!empty($_POST['AffiliateWebsite'])) {
+			$AffiliateWebsite = $_POST['AffiliateWebsite'];
+		}else{
+		   $AffiliateWebsite="";
 		}
 		$CompanyLogo = $_FILES['CompanyLogo']['name'];
 		$tmp_name    = $_FILES['CompanyLogo']['tmp_name'];
@@ -296,6 +302,8 @@ $Seo 				= cleanURL($CompanyName);
 			"CompanyAddress"			=> mysqli_real_escape_string($db,$CompanyAddress),
 			"CompanyEmail"				=> mysqli_real_escape_string($db,$CompanyEmail),
 			"CompanyWebsite"			=> mysqli_real_escape_string($db,$CompanyWebsite),
+			"AffiliateWebsite"			=> mysqli_real_escape_string($db,$AffiliateWebsite),
+
 		//	"CompanyLogo"				=> $UploadCompanyLogo,
 			"ShortDescription"			=> mysqli_real_escape_string($db,$ShortDescription),
 			"Description"				=> mysqli_real_escape_string($db,$Description),

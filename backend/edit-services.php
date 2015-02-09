@@ -361,6 +361,11 @@ $rows = $results->fetch_object();
         <label for="CompanyWebsite">Company Website:</label>
         <input name="CompanyWebsite" id="CompanyWebsite" type="text" class="form-control" value="<?php echo $row_result->CompanyWebsite;?>" placeholder="http://" />
         </div>
+
+        <div class="form-group">
+        <label for="AffiliateWebsite">Affiliate Website:</label>
+        <input name="AffiliateWebsite" id="AffiliateWebsite" type="text" class="form-control" value="<?php echo $row_result->AffiliateWebsite;?>" placeholder="http://" />
+        </div>
         
         
          <div class="form-group">

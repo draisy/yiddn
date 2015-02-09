@@ -122,6 +122,9 @@ function updateTotal() {
 
 					}
 			}
+		if(AmountCharged.format(2)=="-0.00"){
+		AmountCharged = 0.00;
+		}
 	$('#TotalCost').val("Order Total: $" + AmountCharged.format(2) + " every 3 months");
 	}
 	/** ----- PaymentPlan 20% -----**/
